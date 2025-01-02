@@ -37,4 +37,5 @@ input{
 #signup:hover{
     background-color:cornflowerblue ;
     border: none;
+    cursor: pointer;
 }
