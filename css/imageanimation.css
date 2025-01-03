@@ -20,7 +20,7 @@ body{
 
 .scroll-container{
     display:flex;
-    width:calc(100%*5);
+    width:500%;
     animation: scrollAnimation 15s linear infinite;
 }
 
@@ -38,5 +38,45 @@ object-fit: cover;
 }
 
 @keyframes scrollAnimation{
-    
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.hyperlink{
+
+    display: block;
+    margin-top:20px ;
+    text-align: center;
+
+    h1{
+        display: grid;
+        justify-content:center ;
+    }
+
+}
+
+#hyper-img{
+    width: 100px;
+    height: 132px;
+}
+
+.rounded-image{
+
+    display: block;
+    margin-top:20px ;
+    text-align: center;
+
+    h2{
+        display: grid;
+        justify-content:center ;
+    }
+}
+#rounded-img{
+    border-radius: 50%;   /* use border radius property to create rounded/circled image */
+    width: 300px;
+    height: 300px;
 }
