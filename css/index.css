@@ -48,3 +48,43 @@ footer a {
 footer a:hover{
     color: chocolate;
 }
+
+/*Icons styling */
+
+.mail-icons i {
+    font-size: 20px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #f74343; /* Default color */
+    transition: color 0.3s ease;
+}
+
+.linkedin-icons i{
+    font-size: 20px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #8194ec; /* Default color */
+    transition: color 0.3s ease;
+}
+
+
+.contact-icons:hover {
+    color: #0077b5; /* LinkedIn Blue or Mail hover color */
+}
+
+/*
+ .contact-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+        }
+
+        .contact-section h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        } */
+
+       
