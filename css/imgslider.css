@@ -1,0 +1,78 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: color #f0f0f0 ;
+    position: relative;
+}
+
+.slider{
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    overflow: hidden;
+   border: 2px solid #ddd;
+   border-radius: 10px;
+}
+.slider img{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     opacity: 0;
+     animation:slide-animation 12s infinite ;
+    }
+
+    .slider img:nth-child(1){
+    animation-delay: 0s;
+    }
+    .slider img:nth-child(2){
+    animation-delay: 4s;
+    }
+    .slider img:nth-child(3){
+    animation-delay: 8s;
+    }
+    /*The animation is controlled by the percentage values  (from 0% to 100%), which represent points in the animation timeline. */
+@keyframes slide-animation{
+    0%{
+        opacity:0 ;
+    }
+    8%{
+        opacity:1 ;
+    }
+    33%{
+        opacity:1 ;
+    }
+    41%{
+        opacity:0 ;
+    }
+    100%{
+        opacity:0 ;
+    }
+}
+ 
+.button{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #f371c8;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.button:hover{
+    background-color: #7b6ae0;
+}
