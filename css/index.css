@@ -6,14 +6,21 @@
 
 .navbar{
     display: flex;
-    justify-content:flex-end;
+    justify-content:space-between;
     align-items: center;
-    margin:1px;
+    padding: 10px 20px; 
     padding: 10px 20px; 
     list-style: none;
-    background-color: black;
+    padding: 10px 20px;  
+    list-style: none;
+    background-color: #333;
     color: white;
+    box-sizing: border-box;
+}
 
+.navbar .logo{
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .navbar a{
@@ -21,13 +28,38 @@
     text-decoration: none;
    display: inline-block;
    padding: 10px 20px;
-   font-size: 1rem;
+   font-size: 1rem; /*1rem=16px*/
 }
 
-.navbar :hover{
+.navbar nav :hover{
     color: chocolate;
 }
+.search-box{
+    display: flex;
+    align-items: center;
 
+    input[type="text"]{
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        padding: 5px;
+        font-size: 14px;   
+    }
+    button{
+        cursor: pointer;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        font-size: 14px; 
+       color: white;
+        background-color: #7541ef;
+    }
+
+    button:hover{
+        background-color: #88acb8;
+        color: white;
+    }
+}
 
 footer {
     background-color: #333;

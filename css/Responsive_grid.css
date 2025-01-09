@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+   }
+
+   body {
+    margin: 0;
+    font-family: Arial;
+   }
+
+   .header{
+    text-align: center;
+    padding: 32px;
+   }
+
+    /* Create a flex container for rows */
+
+    .row {
+        display: -ms-flexbox; /* For IE10 */
+        display: flex; /* Modern flexbox layout */
+        -ms-flex-wrap: wrap; /* For IE10 */
+        flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+        padding: 0 4px; /* Add spacing on both sides */
+       }
+
+        /* Define each column inside the grid */
+ .column {
+    -ms-flex: 25%; /* For IE10: 4 columns (25% each) */
+    flex: 25%; /* Modern browsers: 4 columns (25% each) */
+    max-width: 25%; /* Ensure maximum width */
+    padding: 10px 4px; /* Add padding between columns */
+   }
+
+    /* Style for images inside columns */
+ .column img {
+    margin-top: 8px; /* Add space between images vertically */
+    vertical-align:middle; /* Align images properly */
+    width: 100%; /* Make images responsive to column width */
+   }
+    /* Responsive layout: 2 columns for screens 800px wide or less */
+ @media screen and (max-width: 800px) {
+    .column {
+      -ms-flex: 50%; /* For IE10 */
+      flex: 50%; /* 2 columns (50% each) */
+      max-width: 50%;
+    }
+}  
+
+/* Responsive layout: Single column for screens 600px wide or less */
+@media screen and (max-width: 600px) {
+    .column {
+      -ms-flex: 100%; /* For IE10 */
+      flex: 100%; /* Single column */
+      max-width: 100%;
+    }
+   }

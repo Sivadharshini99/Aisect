@@ -1,0 +1,54 @@
+ /* General body styling */
+ body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    transition: background-color 0.3s ease-in-out;
+   }
+   /* Sidenav container */
+   .sidenav {
+    height: 100%; /* Full height of the viewport */
+    width: 0; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    z-index: 1; /* Place it on top */
+    top: 0; /* Start at the top of the viewport */
+    left: 0; /* Align to the left */
+    background-color: #111; /* Dark background color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: width 0.3s ease-in-out; /* Smooth transition when opening/closing */
+    padding-top: 60px; /* Add space at the top */
+  }
+   /* Sidenav links */
+   .sidenav a {
+    padding: 10px 30px; /* Spacing around each link */
+    text-decoration: none; /* Remove underline */
+    font-size: 22px; /* Adjust font size */
+    color: #818181; /* Light gray text color */
+    display: block; /* Make links stack vertically */
+    transition: color 0.3s; /* Smooth color change on hover */
+   }
+   /* Hover effect for links */
+   .sidenav a:hover {
+    color: #f1f1f1; /* Change to white when hovered */
+   }
+   /* Close button inside the sidenav */
+   .sidenav .closebtn {
+    position: absolute; /* Position it in the top-right corner */
+    top: 0;
+    right: 25px;
+    font-size: 36px; /* Large size */
+    color: white; /* White color for visibility */
+   }
+   /* When the sidenav is targeted using the :target pseudo-class */
+  #sidenav:target {
+    width: 250px; /* Expand the sidenav */
+   }
+   /* Main content area */
+   #main {
+    transition: margin-left 0.3s ease-in-out; /* Smooth shift when sidenav is open */
+    padding: 16px;
+   }
+   /* Shift main content when sidenav is open */
+   #sidenav:target ~ #main {
+    margin-left: 250px; /* Shift content to the right */
+    background-color: rgba(0, 0, 0, 0.4); /* Add a dim effect */
+   }
