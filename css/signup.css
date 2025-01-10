@@ -39,3 +39,26 @@ input{
     border: none;
     cursor: pointer;
 }
+
+#signin-button{
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#sign-in{
+    border-radius: 5px;
+    padding: 2px 5px;
+   border: 1px solid #a1a1a1; 
+   font-weight: bold;
+   color: white;
+   background-color: rgb(8, 134, 8);
+   text-decoration: none;
+
+}
+
+#sign-in:hover{
+    background-color:blue ;
+    border: none;
+    cursor: pointer;
+}
