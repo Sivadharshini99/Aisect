@@ -1,0 +1,33 @@
+/* Styling for the main container */
+.all-networks {
+    margin: 0;
+    padding: 5px;
+    background-color: lightgray; /* Light gray background for the section */
+  }
+  
+  /* Styling for headings and network containers */
+  .all-networks > h1, .network { /* > Sign: child selector, which selects DIRECT child elements of a specified parent element.*/
+    margin: 10px; /* Adds margin around elements */
+    padding: 5px; /* Adds padding inside elements */
+  }
+  
+  /* Styling for individual network articles */
+  .network {
+    background: white; /* White background for network articles */
+  }
+  
+  /* Styling for headings and paragraphs inside network articles */
+  .network > h2, p {
+    margin: 4px; /* Small margin around text */
+    font-size: 90%; /* Slightly smaller font size */
+  }
+  
+  /* Styling for the footer section */
+  footer {
+    display: block;
+    text-align: center; /* Centers the footer text */
+    padding: 3px; /* Adds padding inside the footer */
+    background-color: DarkSalmon; /* Dark salmon background color */
+    color: white; /* White text color for contrast */
+  }
+  
