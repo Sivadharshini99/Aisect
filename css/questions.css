@@ -1,0 +1,59 @@
+ /* Ques-1  */
+/* p { 
+    color: red; 
+    font-size: 16px; 
+    padding: 10px; 
+  } */
+
+  /* div p { 
+    color: green;  
+    margin-top: 20px; 
+    text-align: center; 
+  } */
+
+  /* h1 p { 
+    background-color: yellow; 
+    font-weight: bold; 
+    margin: 15px; 
+  } */
+
+  /* p { 
+    font-family: Arial, sans-serif; 
+    border: 1px solid black; 
+    padding: 5px; 
+  } */
+
+
+  #scroll{
+    display:inline-block ;
+    margin-top: 30px;
+    animation: scroll-to-bottom-top 5s linear infinite;
+    width: 60%;
+  }
+
+  /* @keyframes scroll-top{
+    from {
+        transform: translatey(100%);
+    }
+    to {
+        transform: translatey(-100%);
+    }
+  } */
+
+  @keyframes scroll-to-bottom-top {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+
+    from {
+        color: red;
+    }
+    to {
+       color: yellow;
+    }
+}
+
+

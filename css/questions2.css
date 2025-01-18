@@ -1,0 +1,17 @@
+.parent-container {
+    width: 80%;
+    margin: 0 auto;
+   background-color: #dfdddd;
+   padding: 20px;
+}
+
+.content{
+    width: 50%;
+    margin: 20px auto;/* margin:auto;--> always means- left & right*/
+    padding: 5px; 
+    box-sizing: border-box;
+    background-color: lightcoral;
+    text-align: center;
+
+}
+
