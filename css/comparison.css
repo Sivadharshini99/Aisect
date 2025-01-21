@@ -1,0 +1,10 @@
+/* Container that holds all columns */
+.col-container {
+    display: table; /* Makes the container behave like a table */
+    width: 100%; /* Ensures full width of the container */
+   }
+   /* Individual column styling */
+   .col {
+    display: table-cell; /* Makes the columns behave like table cells */
+    padding: 16px; /* Adds padding for better spacing */
+   }
