@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>types of width container</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+    " rel="stylesheet">
+    <style> 
+        body { 
+            background-color: #f8f9fa; /* Light grey background */ 
+        } 
+     
+        .container { 
+            background-color: #c05d5d; /* Light red background */ 
+            padding: 20px; 
+            text-align: center; 
+        } 
+        .container-fluid { 
+            background-color: #ddffdd; /* Light green background */ 
+            padding: 20px; 
+            text-align: center; 
+        } 
+        .container-md { 
+            background-color: #ddddff; /* Light blue background */ 
+            padding: 20px;
+        }
+        </style>
+</head>
+<body>
+        <!-- fixed width container -->
+    <div class="container">
+        <p>this is a <strong>fixed width container.it changes it's width with different breakpoints(screen sizes) and stays centered on the page.</strong></p>
+        <p>Resize the browser window to see the container adjust its width while remaining 
+            centered.</p>
+            <!-- full-width container -->
+            <div class="container-fluid"> 
+                <p>This is a <strong>full-width container</strong>. It always spans the en re width of the 
+        screen, no ma er the screen size.</p> 
+                <p>Resize the browser window, and you'll see the green box always stretches from edge to 
+        edge.</p> 
+            </div></div>
+ <!-- containr-fluid -->
+            <div class="container-md"> 
+                <p>This is a <strong>responsive container</strong>. It is full-width on smaller screens but 
+                becomes fixed-width when the screen size is medium (`md`) or larger.</p> 
+                <p>Resize the browser window to see it switch between full-width and fixed-width.</p> 
+                </div> 
+
+</body>
+</html>
