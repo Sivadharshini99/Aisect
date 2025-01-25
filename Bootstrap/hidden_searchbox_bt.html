@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Search Box</title>
+
+  <!-- Bootstrap CDN for styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    /* Styling for the search box container */
+    .search-container {
+      position: relative; /* Positioning for the search box and icon */
+      display: inline-block; /* Inline display for proper alignment */
+    }
+
+    /* Initial state of the search box (hidden) */
+    .search-box {
+      position: absolute;
+      top: 50%; /* Align vertically */
+      right: 0;
+      transform: translateY(-50%); /* Center align */
+      display: none; /* Hidden by default */
+      width: 250px; /* Width of the search box */
+      padding: 10px;
+      border-radius: 5px; /* Rounded corners */
+      border: 1px solid #ccc; /* Light border */
+      background-color: #fff; /* White background */
+    }
+
+    /* Styling for the search button/icon */
+    .search-btn {
+      cursor: pointer;
+      font-size: 20px; /* Icon size */
+      padding: 10px;
+      border-radius: 50%; /* Circular button */
+      background-color: #007bff; /* Blue background */
+      color: #fff; /* White icon color */
+      border: none;
+    }
+
+    /* Show the search box when the button is hovered */
+    .search-container:hover .search-box {
+      display: block; /* Display the search box */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Search Container -->
+  <div class="container mt-5 text-center">
+    <div class="search-container">
+      <!-- Search Button -->
+      <button class="search-btn">
+        <i class="bi bi-search"></i> <!-- Using a Bootstrap icon -->
+      </button>
+      <!-- Hidden Search Box -->
+      <input type="text" class="search-box" placeholder="Search...">
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

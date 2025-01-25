@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Box Shadow Example</title>
+
+  <!-- Bootstrap CDN for styles -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles for Box Shadows -->
+  <style>
+    /* Card container to hold the shadow effect */
+    .shadow-card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background-color: #fff;
+      border-radius: 15px; /* Rounded corners for the card */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default shadow */
+      transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow change and scaling */
+    }
+
+    /* Hover effect for the shadow to make it more prominent */
+    .shadow-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker and larger shadow on hover */
+      transform: translateY(-5px); /* Lifts the card slightly */
+    }
+
+    /* Optional: Add an inner shadow for an inset effect */
+    .inner-shadow-card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1); /* Inset shadow inside the card */
+      transition: box-shadow 0.3s ease;
+    }
+
+    .inner-shadow-card:hover {
+      box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.2); /* Darker inset shadow on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bootstrap Container -->
+  <div class="container mt-5 text-center">
+    <!-- Shadow Card -->
+    <div class="shadow-card mx-auto mb-4">
+      <div class="p-3">
+        <h5>Shadow Card</h5>
+        <p>This card uses an outer shadow effect that becomes more prominent when hovered over.</p>
+      </div>
+    </div>
+
+    <!-- Inner Shadow Card -->
+    <div class="inner-shadow-card mx-auto">
+      <div class="p-3">
+        <h5>Inner Shadow Card</h5>
+        <p>This card uses an inset shadow effect for a unique appearance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
