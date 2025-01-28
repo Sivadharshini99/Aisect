@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollspy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add height to sections for demonstration */
+        section {
+          height: 500px;
+          padding: 20px;
+        }
+        #section1 { background-color: #f8d7da; }
+        #section2 { background-color: #d1ecf1; }
+        #section3 { background-color: #d4edda; }
+      </style>
+</head>
+<!-- data-bs-spy="scroll": Activates the Scrollspy feature.
+
+data-bs-target="#navbar-example": Links the navbar to the Scrollspy.
+
+data-bs-offset="50": Sets the offset to avoid overlapping due to the fixed navbar. -->
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="50" tabindex="0">
+
+    <!-- Navbar -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Scrollspy Example</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#section1">Section 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section2">Section 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section3">Section 3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Content Sections -->
+    <div class="container">
+      <section id="section1">
+        <h2>Section 1</h2>
+        <p>This is the content of Section 1.</p>
+      </section>
+      <section id="section2">
+        <h2>Section 2</h2>
+        <p>This is the content of Section 2.</p>
+      </section>
+      <section id="section3">
+        <h2>Section 3</h2>
+        <p>This is the content of Section 3.</p>
+      </section>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    </body>
+    </html>
+    
+      <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
