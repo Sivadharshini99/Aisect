@@ -42,15 +42,17 @@ else if(cd==20)
 else
 console.log("cd is not equal to 10,15,20")
 //sample question in if-else-if stmt
-let prompt;
-var mark=prompt("enter your mark:")
-if(mark>=90)
-    console.log("grade A:" +mark);
-else if(mark>=80)
-    console.log("grade B" +mark);
-else if(mark>=70)
-    console.log("grade c" +mark);
-else
-console.log("grade F" +mark)
+function assignGrade(mark){
+    if(mark>=90)
+        console.log("grade A:" + mark);
+    else if(mark>=80)
+        console.log("grade B" + mark);
+    else if(mark>=70)
+        console.log("grade c" + mark);
+    else
+    console.log("grade F" + mark)
+}
+let mark=parseInt(prompt("enter your mark:"));
+assignGrade(mark);
 
 
