@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get element by id</title>
+</head>
+<body>
+    <h1 id="heading">welcome to Javascript</h1>
+    <h2 id="heading2"> Javascript-language</h2>
+    <button id="changeButton">Change text</button>
+    <script>
+        //get element with ID "heading" and assign /it to the variable 'heading'
+        let heading=document.getElementById("heading");
+        let heading2=document.getElementById("heading2");
+        //get the button element with ID "changeButton" and asssign it to variable 'button'
+        let button=document.getElementById("changeButton");
+
+        //when the button is clicked ,change the content inside the "heading" element(h1)
+        button.onclick=function(){
+            heading.innerHTML="hello,Javascript is powerful!"
+            heading2.innerHTML="hello,Javascript is programmming language";
+            //button.onclick comes from variable name
+            //heading and heading 2 comes from id name
+        };
+
+        
+    </script>
+</body>
+</html>

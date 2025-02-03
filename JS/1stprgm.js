@@ -62,11 +62,102 @@ var result;
 switch(grade){
     case 'A':
         result="A Grade";
+        break;
     case 'B':
         result="B Grade";
+        break;
     case 'C':
         result="C Grade";
+        break;
     default:
         result="No Grade";
 }
 console.log(result);
+
+//sample question 2=>to display day from week by numbers 
+var num=7;
+var day;
+switch(num){
+    case 1:
+        day="Monday";
+        break;
+    case 2 :
+        day="Tuesday";
+        break;
+    case 3:
+        day="Wednesday";
+        break;
+    case 4:
+        day="Thrusday";
+        break;
+    case 5:
+        day="Friday";
+        break;
+    case 6:
+        day="Saturday";
+        break;
+    case 7:
+        day="Sunday";
+        break;
+        default:
+            day="Invalid day"
+}
+console.log(day);
+
+//for-loop
+for(i=1;i<=5;i++){
+    console.log(i);
+}
+// to display numbers from 10 to 1
+for(j=10;j>=1;j--){
+    console.log(j);
+}
+
+//while-loop
+var k=11;
+while(k<=15){
+    console.log(k);
+    k++;
+}
+//STRING REVERSAL
+let str="mango";//input string
+let reversedStr="";//to store the reversed string
+let l=str.length-1;//start from last character
+
+while(l >=0){
+    reversedStr+=str[l];//add the character to the reversed string
+    l--;//decrease the index
+}
+console.log(reversedStr);
+//PALINDROME-MADAM(SAME BACKWARD&fORWARD )
+let str2="madam";//input string
+let reversedStr2="";//to store the reversed string
+let m=str2.length-1;//start from last character
+
+while(m >=0){
+    reversedStr2+=str2[m];//add the character to the reversed string
+    m--;//decrease the index
+}
+console.log(reversedStr2);
+
+//do-while
+var i=21;
+do{
+    console.log(i);
+    i++;
+}
+while(i<=25);
+
+//for-in loop
+const person={
+    name:"John",
+    age:30,
+    country:"USA"
+};
+
+let result2="";
+for(let key in person){
+    result2 +=key +":" + person[key] + "\n" ;
+}
+console.log(result2);
+

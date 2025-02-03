@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User input validation</title>
+</head>
+<body>
+    <h2>enter a no between 1 to 10:</h2>
+    <p id="message"></p><!--diaplaying validation result-->
+    <script>
+        function validateInput()
+        {
+            let userInput;
+            //loop until the user enters a valid number between 1 and 10
+            while(true){
+                userInput=prompt("enters a valid number between 1 and 10");
+            
+            //check if input is a valid number valid number between 1 and 10
+            if(userInput >=1 && userInput <=10 &&!isNaN(userInput)){
+                document.getElementById("message").innerHTML="valid input received:"+ userInput;
+                break;//exit the loop
+            }
+            else{
+                alert("invalid input.please try input");//alert for invalid input
+            }
+        }
+    }
+        //call function to start validation
+        validateInput();
+
+    </script>
+</body>
+</html>
