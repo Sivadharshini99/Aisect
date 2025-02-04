@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Event</title>
+</head>
+<body>
+    <h1>OnBlur Event</h1>
+    <h2>onblur triggers when an input field loses focus </h2>
+        <p>when user clicks away from input field,the background color changes.</p>
+    <input type="text" id="name" placeholder="enter your name" onblur="changeColor()">
+    <p id="message">change background color on blur</p>
+    <hr>
+    
+    <h1>validate input field on blur</h1>
+    <input type="email" id="email" placeholder="enter email" onblur="validateEmail()">
+    <p>if the email does not contain @,an error message appears</p>
+    <hr>
+
+    <h1>hide element on click</h1>
+    <button onclick="hideText()">Hide text</button>
+    <p id="text">this is some text</p>
+    <p>when the button is clicked, the paragrah disappears.</p>
+    <hr>
+
+    <h1>onsubmit event</h1>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="username" placeholder="enter username">
+        <button type="submit">submit</button>
+    </form>
+    <p id="error" style="color:red"></p>
+    <p>if the username field is empty,form submission is blocked</p>
+    <hr>
+
+    <h1>alert on successful submission</h1>
+    <form onsubmit="return showAlert()">
+    <input type="text" required>
+    <button type="submit">submit</button>
+</form>
+<p>displays an alert when form is submitted</p>
+<hr>
+    <script>
+        // onblur
+        function changeColor(){
+            document.getElementById("name").style.backgroundColor="lightgreen";
+            document.getElementById("message").innerHTML="you moved away from input";
+        }
+        
+                    // validateEmail
+                    function validateEmail(){
+        
+                        let email=document.getElementById("email").value;
+                        if(email.indexOf("@")===-1){
+                            document.getElementById("emailerror").innerText="Invalid email!";
+                        }
+                        else{
+                            document.getElementById("emailError").innerText="";
+                        }
+                    
+                    }
+
+                    //hide text
+                    function hideText(){
+                        document.getElementById("text").style.display="none";
+                    }
+
+                    //validateForm
+                    function validateForm(){
+                        let username=document.getElementById("username").value;
+                        if(username===""){
+                            document.getElementById("error").innerText="username cannot be empty!";
+                            return false;//prevents false submission
+                        }
+                        return true;
+                    }
+
+                    //showalert
+                    function showAlert(){
+                        alert("form submitted successfully");
+                        return true;
+                    }
+
+
+    </script>
+</body>
+</html>
