@@ -40,6 +40,18 @@
 </form>
 <p>displays an alert when form is submitted</p>
 <hr>
+
+<h1>onfocus event</h1>
+<input type="text" onfocus="highlightField(this)">
+<p>background turns yellow  when user focuses on input field</p>
+<hr>
+
+<h1>show help text on focus</h1>
+<input type="text" id="name" onfocus="showHelp()" placeholder="enter your name">
+<p id="help"></p>
+<p>a help msg appears when user focuses on input field</p>
+
+
     <script>
         // onblur
         function changeColor(){
@@ -80,6 +92,18 @@
                         alert("form submitted successfully");
                         return true;
                     }
+
+                    //onfocus event
+                    function highlightField(element){
+                        element.style.backgroundColor="lightblue";
+                    }
+
+                    //show help text on focus
+
+                    function showHelp(){
+                        document.getElementById("help").innerText="please enter your full name"
+                }
+
 
 
     </script>

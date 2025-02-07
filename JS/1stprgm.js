@@ -161,3 +161,38 @@ for(let key in person){
 }
 console.log(result2);
 
+//IIFE
+(function (){
+    console.log("function runs immediately");
+})
+
+();
+
+//fun
+function multiply(l,m){
+    return l*m;
+}
+
+let res6=multiply(7,8);
+console.log(res6);
+
+//fahrenheit to celsius
+function tocelsius(f){
+    return(5/9)*(f-32);
+} 
+let celsius=tocelsius(80);
+console.log("celsius:" + celsius);
+//another way
+function tocelsius(f){
+    return (f-32)/1.8;
+} 
+let celsius2=tocelsius(90);
+console.log("celsius:" + celsius2);
+//BMI
+function tobmi(){
+    return (weight)/(height*height);
+} 
+let weight=52;
+let height=1.47;
+let bmi=tobmi();
+console.log("bmi is:" + bmi);
