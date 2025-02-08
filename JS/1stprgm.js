@@ -226,3 +226,14 @@ function funcD(){
 
 funcC();//FN.CALL
 funcD();//FN.CALL
+
+//closure
+function outerFunction(){
+    var outerVar=" i'm outer function";//outer variables
+    function innerFunction(){
+        console.log(outerVar);//inner function accessing outer variable
+    }
+    return innerFunction;//returning inner function
+}
+var closureFunc=outerFunction();//calling outer function and storing inner function
+closureFunc();//calling the returned inner function
