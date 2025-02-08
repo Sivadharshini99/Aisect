@@ -11,6 +11,12 @@
     <input type="number" id="fahrenheit" placeholder="Fahrenheit" required>
     <button onclick="convertToCelsius()">Convert</button>
     <p id="result"></p>
+    
+    <hr>
+    <!-- another way -->
+    <p>Enter a temperature in Fahrenheit to convert it to Celsius:</p>
+<input type="number" id="fahrenheit2" placeholder="Enter Fahrenheit" oninput="convertToCelsius2()">
+<p id="demo"></p>
 
     <script>
         function convertToCelsius() {
@@ -29,6 +35,23 @@
             // Display the result
             document.getElementById("result").innerText = `${fahrenheit}°F is equal to ${celsius.toFixed(2)}°C`;
         }
+
+        //another way
+        
+function tocelsius2(f) {
+    return (5/9) * (f - 32);
+}
+
+function convertToCelsius2() {
+    // Get the input value
+    let fahrenheit2 = document.getElementById("fahrenheit2").value;
+
+    // Convert the value to Celsius
+    let value = tocelsius2(fahrenheit2);
+
+    // Display the result in the paragraph
+    document.getElementById("demo").innerHTML = value + " °C";
+}
     </script>
 </body>
 </html>

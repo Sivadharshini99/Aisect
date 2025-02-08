@@ -196,3 +196,33 @@ let weight=52;
 let height=1.47;
 let bmi=tobmi();
 console.log("bmi is:" + bmi);
+
+//global variable
+var P=10;
+var q=20;
+
+function funcA(){
+    console.log(P);
+}
+function funcB(){
+    console.log(q);
+}
+
+funcA();//FN.CALL
+funcB();//FN.CALL
+
+//LOCAL VARIABLE
+var P1=10;
+var q1=20;
+
+function funcC(){
+    var P3=30;
+    console.log(P3);
+}
+function funcD(){
+    var q2=40;
+    console.log(q2);
+}
+
+funcC();//FN.CALL
+funcD();//FN.CALL
