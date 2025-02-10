@@ -17,6 +17,12 @@
     <p>Enter a temperature in Fahrenheit to convert it to Celsius:</p>
 <input type="number" id="fahrenheit2" placeholder="Enter Fahrenheit" oninput="convertToCelsius2()">
 <p id="demo"></p>
+<hr>
+<!-- another way -->
+ <input type="number" id="fahrenheit3" placeholder="Enter Fahrenheit number">
+ <button onclick="convertToCelsius3()">Convert</button>
+    <p id="demo2"></p>
+    
 
     <script>
         function convertToCelsius() {
@@ -52,6 +58,25 @@ function convertToCelsius2() {
     // Display the result in the paragraph
     document.getElementById("demo").innerHTML = value + " °C";
 }
-    </script>
+//another way
+let value=tocelsius3(78);//no arguments passed,'f' is underfined
+document.getElementById("demo2").innerHTML=value;
+function tocelsius3(f)
+{
+    if(isNaN(f)){
+    return "please provide valid input ";
+}
+    return (5/9) * (f - 32);
+}  
+function convertToCelsius3(){
+    let fahrenheit3 = document.getElementById("fahrenheit3").value;
+
+    // Convert the value to Celsius
+    let value = tocelsius3(fahrenheit3);
+
+     // Display the result in the paragraph
+     document.getElementById("demo2").innerHTML = value + " °C";
+}
+</script>
 </body>
 </html>

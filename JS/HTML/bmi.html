@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI & Age Calculator</title>
+</head>
+<body>
+    <h2>BMI Calculator</h2>
+    <input type="number" id="height" placeholder="Enter height" required> <br>
+    <input type="number" id="weight" placeholder="enter weight" required>
+    <button onclick="bmi()">Convert</button>
+    <p id="bmi"></p>
+
+    <hr>
+    <h2>Age calculator</h2>
+    <input type="number" id="presentyear" placeholder="Enter present year" required> <br>
+    <input type="number" id="birthyear" placeholder="enter birth year" required>
+    <button onclick="toAge()">Convert</button>
+    <p id="age"></p>
+    <script>
+    
+        function toBmi(height,weight){        
+    return (weight)/(height*height);
+} 
+
+function bmi(){
+    let height= document.getElementById("height").value;
+    let weight= document.getElementById("weight").value;
+    let value=toBmi(height,weight);
+document.getElementById("bmi").innerHTML="your BMI is:" + value;
+}
+
+//Age calculator
+function age(presentyear,birthyear){        
+    return (presentyear)-(birthyear);
+} 
+
+function toAge(){
+    let presentyear= document.getElementById("presentyear").value;
+    let birthyear= document.getElementById("birthyear").value;
+    let value=age(presentyear,birthyear);
+document.getElementById("age").innerHTML="your Age is:" + value;
+}
+
+    </script>
+</body>
+</html>

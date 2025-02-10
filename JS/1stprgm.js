@@ -227,7 +227,16 @@ function funcD(){
 funcC();//FN.CALL
 funcD();//FN.CALL
 
-//closure
+//AGE CALCULATOR
+function toAge(){
+    return (presentyear)-(birthyear);
+}
+let presentyear=2025;
+let birthyear=1999;
+let age=toAge();
+console.log(" your age is: " + age);
+
+//CLOSURE-an inner function can access variables from outer function
 function outerFunction(){
     var outerVar=" i'm outer function";//outer variables
     function innerFunction(){
@@ -237,3 +246,29 @@ function outerFunction(){
 }
 var closureFunc=outerFunction();//calling outer function and storing inner function
 closureFunc();//calling the returned inner function
+
+//closure with private variables -cannot access variables from outer function
+function counter(){
+    var count=0;//private variable
+    return function(){
+        count++;
+        console.log("count:",count);
+    };
+}
+
+var increment=counter();
+increment();
+increment();
+increment();
+
+//closures in function factory
+function multiplier(factor){
+    return function(number){
+        return number * factor;
+
+    };
+}
+var double=multiplier(2);
+var triple=multiplier(3);
+console.log(double(5));
+console.log(triple(5));
