@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switchers</title>
+</head>
+<body>
+    <h1 id="title">Welcome</h1>
+    <p id="description">click the button below to switch the language</p>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('ta')">தமிழ்</button>
+    <script>
+    (function(){
+        //language data
+        const languageData={
+            en:{
+                title:"Welcome",
+                desription:"Click the button below to switch the language."
+            },
+            ta:{
+                title:"வரவேற்கிறோம்",
+                desription:"மொழியை மாற்ற கீழே உள்ள பட்டனை அழுத்தவும்."
+            }
+        };
+
+        //function to change language
+        window.changeLanguage=function(lang){
+            document.getElementById('title').textContent=languageData[lang].title;
+            document.getElementById('description').textContent=languageData[lang].desription;
+        };
+    })
+    ();//FN.CALL
+    </script>
+</body>
+</html>

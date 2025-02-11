@@ -272,3 +272,41 @@ var double=multiplier(2);
 var triple=multiplier(3);
 console.log(double(5));
 console.log(triple(5));
+
+//ANONYMOUS FUNCTION-fn is assigned and called by using a variable name
+const greet2=function(name){
+    return "hello " + name + "!";
+}
+console.log(greet2("karthi"));
+
+//IIFE- immediately invoked function
+(function(){
+    console.log("function runs immediately");
+})
+();//fn.call
+
+//ANONYMOUS FUNCTION AS CALLBACK
+setTimeout(function(){
+    console.log("executed after 2 seconds");
+},2000)//2000-MILLISECONDS
+
+//  ARROW FUNCTIONS
+const sum=(a,b)=> a+b;
+console.log(sum(5,3));
+
+//celsius to fahrenheit using anonymous function
+const toFahrenheit=function(celsius){
+    return (celsius * 9/5)+32;
+};
+console.log(toFahrenheit(30));
+console.log(toFahrenheit(100));
+
+//USER SETTING PRGM
+(function(){
+    const userSettings={
+        theme:"dark",
+        language:"English"
+    };
+    console.log("User settings initialized",userSettings);
+})
+();//FN.CALL

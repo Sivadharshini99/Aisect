@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+</head>
+<body>
+    <h1 id="form-title">Registration Form</h1>
+    <label for="name" id="label-name">Name:</label>
+    <input type="text" id="label-name" placeholder="Enter your name"><br><br>
+    <label id="label-gender">Gender:</label>
+    <select id="gender">
+        <option value="female" id="option-female">Female</option>
+        <option value="male" id="option-male">Male</option>
+        <option value="other" id="option-other">Other</option>
+    </select><br><br>
+        
+    <label for="mobile" id="label-mobile">Mobile Number:</label>
+    <input type="number" id="mobile" placeholder="Enter your mobile number"><br><br>
+    <label for="email" id="label-email">Email ID:</label>
+    <input type="email" id="email" placeholder="Enter your email"><br><br>
+    <label for="address" id="label-address">Address:</label>
+   <textarea id="address" placeholder="Enter your address"></textarea>
+<br><br>
+
+<!-- submit and reset buttons -->
+<button type="submit" id="submit-btn">Submit</button>
+<button type="reset" id="reset-btn">Reset</button>
+<br><br>
+<!-- language switch Buttons -->
+<button onclick="changeLanguage('en')">English</button>
+<button onclick="changeLanguage('ta')">தமிழ்</button>
+
+<script>
+    (function(){ //IIFE FUNCTION
+        //Language data
+        const languageData={
+            en:{
+                formTitle:"Registration Form",
+                name:"Name",
+                gender:"Gender",
+                male:"Male",
+                female:"Female",
+                other:"Other",
+                mobile:"Mobile Number:",
+                email:"Email ID:",
+                address:"Address:",
+                submit:"Submit",
+                reset:"Reset"
+            },
+            ta:{
+                formTitle:"பதிவு படிவம்",
+                name:"பெயர்",
+                gender:"பாலினம்",
+                male:"ஆண்",
+                female:"பெண்",
+                other:"மற்றவை",
+                mobile:"கைப்பேசி:",
+                email:"மின்னஞ்சல்:",
+                address:"முகவரி",
+                submit:"சமர்ப்பிக்க",
+                reset:"மீட்டமை"
+            }
+        };
+
+        //function to change language dynamically
+        window.changeLanguage=function(lang){
+            document.getElementById('form-title').textContent=languageData[lang].formTitle;
+            document.getElementById('label-name').textContent=languageData[lang].name;
+            document.getElementById('label-gender').textContent=languageData[lang].gender;
+            document.getElementById('option-male').textContent=languageData[lang].male;
+            document.getElementById('option-female').textContent=languageData[lang].female;
+            document.getElementById('option-other').textContent=languageData[lang].other;
+            document.getElementById('label-mobile').textContent=languageData[lang].mobile;
+            document.getElementById('label-email').textContent=languageData[lang].email;
+            document.getElementById('label-address').textContent=languageData[lang].address;
+            document.getElementById('submit-btn').textContent=languageData[lang].submit;
+            document.getElementById('reset-btn').textContent=languageData[lang].reset;
+        
+        };
+    })
+    ();//fn call -IIFE EXECUTES IMMEDIATELY
+</script>
+</body>
+</html>
