@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object Method</title>
+</head>
+<body>
+    <h2>Js Object Method</h2>
+    <button onclick="showDetails()">Click to see object Details.</button>
+    <p id="output"></p>
+<script>
+    //create object with properties and method
+    let person={
+        firstName:"Siva",
+        lastName:"satha",
+        fullName:function(){
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    //fn.to display object details
+    function showDetails(){
+        document.getElementById("output").innerText="FullName:" + person.fullName();
+    }
+</script>
+</body>
+</html>

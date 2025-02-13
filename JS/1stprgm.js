@@ -310,3 +310,51 @@ console.log(toFahrenheit(100));
     console.log("User settings initialized",userSettings);
 })
 ();//FN.CALL
+
+//FILTERING PRODUCTS--ANONYMOUS FN. AS CALLBACK FUNCTION
+const products=[
+    {name:"Laptop",price:1000},
+    {name:"Phone",price:500},
+    {name:"Headphones",price:100},
+    {name:"Monitor",price:300}
+];
+
+const affordableProducts=products.filter(function(product)
+{
+    return product.price > 500;
+});                                           
+console.log(affordableProducts);
+
+//SORTING SCORES(Descending order)--Arrow function
+const scores=[45,67,89,90,98];
+scores.sort((a,b)=>b-a);
+console.log(scores);
+
+//  OBJECT
+let person2={
+    name:"siva",age:26,city:"chennai",
+    greet:function(){
+        console.log("hello,my name is:" + this.name);
+    }
+};
+person2.greet();//objectname.functionname=>to call both
+console.log(person2);//OBJECT CALLING--->to call all properties in an object
+
+let person3={
+    firstName:"siva",
+    lastName:"satha",
+    age:30,
+    isStudent:true,
+    hobbies:["reading","Music"],
+    address:{
+        street:"123 new york",
+        city:"chennai",
+        zip:"10001"
+    },
+    fullName:function(){
+        return this.firstName + " " +this.lastName;
+       // console.log(this.firstName + " " +this.lastName);
+    }
+};
+console.log(person3);
+person3.fullName();
