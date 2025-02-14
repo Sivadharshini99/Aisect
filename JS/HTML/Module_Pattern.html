@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Module Patterns</title>
+    <script src="../module_pattern.js"></script>
+</head>
+<body>
+    <h2>click the button to see the details</h2>
+    <button id="btnTest">Click Me!</button>
+    <script>
+        //Binding event after window load
+        window.onload=function(){
+            document.getElementById("btnTest").onclick=function(){
+                //initializing employee object with values
+                Employee.Init("Ramu",28);
+                //Displaying the initialized values
+                Employee.Display();//method calling=>objectname.functionname
+            };
+        };
+    </script>
+</body>
+</html>

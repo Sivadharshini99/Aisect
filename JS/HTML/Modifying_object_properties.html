@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifying object properties</title>
+</head>
+<body>
+    <h2>Modifying object properties</h2>
+    <p id="output"></p>
+</body>
+<script>
+    //creating an object
+    let person={
+        name:"siva",
+        age:23,
+        city:"chengalpat"
+    };
+    
+    //Displaying original  object properties
+    document.getElementById("output").innerHTML="Name:" + person.name +"<br>Age: " + person.age + "<br>City: " + person.city;
+
+//modifying object properties
+person.name="kaviya";
+person.age=26;
+person.city="chennai"
+
+//adding a new property
+person.country="India";
+
+//displaying modifying objects
+setTimeout(()=>{
+    document.getElementById("output").innerHTML+= "<br> <br> After Modification:<br>Name:" + person.name +"<br>Age: " + person.age + "<br>City: " + person.city + "<br>City: " + person.country;   
+},2000)//2000-MILLISECONDS
+</script>
+</html>

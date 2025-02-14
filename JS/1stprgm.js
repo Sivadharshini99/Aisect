@@ -358,3 +358,42 @@ let person3={
 };
 console.log(person3);
 person3.fullName();
+
+//modifying object properties
+let person4={
+        name:"siva",
+        age:30,
+        city:"new york"
+};
+//Displaying original  object properties
+console.log(person4.name + person4.age + person4.city);
+
+//modifying object properties
+person4.name="kaviya";
+person4.age=26;
+person4.city="chennai"
+
+//adding a new property
+person4.country="India";
+
+//displaying modifying objects
+setTimeout(function(){
+    console.log(person4.name + person4.age + person4.city + person4.country);
+},2000)//2000-MILLISECONDS
+
+//LOOPING THROUGH AN OBJECT
+//creating an object
+let student={
+    name:"siva",
+    age:20,
+    course:"CS",
+    grade:"A"
+};
+//displaying original object properties using for...in loop
+let outputText="Student Details:"
+
+for(let key in student){
+    outputText+= key + ":" + student[key] + " ";
+}
+//display result
+console.log(outputText);
