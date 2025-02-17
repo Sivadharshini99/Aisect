@@ -397,3 +397,118 @@ for(let key in student){
 }
 //display result
 console.log(outputText);
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+//JAVASCRIPT PROBLEMS
+//1.PRINTING NUM 1 TO 100 , INCREMENT BY 1 IN EACH ITERATION - FOR LOOP 
+/*var prompt = require('prompt-sync')();
+var n1 = prompt( "please enter valid input" );
+var m1 = prompt(' please enter valid input ');
+for(let i=n1; i<=m1; i++){
+    console.log(i);
+}*/
+
+//2.an ATM repeadtely asks for valid withdrawal amount until user enters valid amount -WHILE LOOP
+/*var prompt = require('prompt-sync')();
+let balance=500;
+let withdrawal = parseInt(prompt( "Enter withdrawal amount" ));
+
+while(withdrawal > balance || withdrawal <= 0){
+    console.log("Invalid amount!, Enter a valid withdrawal amount");
+    withdrawal = parseInt(prompt( "Enter withdrawal amount" ));
+}
+console.log("Transaction successful! you withdraw $" + withdrawal); */
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+//CONSTRUCTOR - TO CREATE MULTIPLE OBJECTS OF SAME TYPE
+ function Car(brand,model,year){
+    this.brand=brand;
+    this.model=model;
+    this.year=year;
+ }
+ let car1=new Car("Toyota","camry",2022);
+ let car2=new Car("Honda","civic",2023);
+ console.log("Car 1:"  + car1.brand + " " + car1.model + "( "+ car1.year + ") " );
+ console.log("Car 2:"  + car1.brand + " " + car2.model + "( "+ car2.year + ") " );
+ //console.log(car1.brand );
+
+ //PROPERTY DEFAULT VALUE ---> if age is not provided, it defaults to 23 , if its is provided it takes provided value
+function Person(name,age=23){
+    this.name=name;
+    this.age=age;
+};
+let person5=new Person("Alice");
+let person6=new Person("BOB",45);
+person6.grade="A"; // adding new property to a constructor
+console.log(person5.name + "is" + person5.age + "years old.");
+console.log(person6.name + "is" + person6.age + "years old" + "grade:" +  person6.grade);
+
+//CONSTRUCTOR FUNCTION METHODS--->methods inside constructors
+function Person(name,age){
+    this.name=name;
+    this.age=age;
+    this.greet=function(){ //methods inside constructors
+        return "Hello my name is: " +this.name;
+    };
+}
+let person7=new Person("Siva",23);
+console.log(person7.greet());//Method calling
+
+//ADDING METHOD TO AN OBJECT
+let person8 ={name:"siva",age:25};
+person8.sayHello=function(){ // objectname.methodname
+    return "Hi,i'm "+ this.name;
+};
+console.log(person8.sayHello());//Method calling
+
+//REAL-TIME EXAMPLES
+//OBJECT CONSTRUCTOR FUNCTION FOR PRODUCT
+function Product(name,price,category){
+    this.name=name;
+    this.price=price;
+    this.category=category;
+}
+let product1=new Product("Laptop",1000, "Electronics");
+let product2=new Product("Shoes",2000, "Fashion");
+console.log(product1);
+console.log(product2);
+
+//PROPERTY DEFAULT VALUE
+function User(name,age,country="Not provided"){
+    this.name=name;
+    this.age=age;
+    this.country=country;//default value is assigned, if not provided
+}
+let user1=new User("MADHU",23,"USA");
+let user2=new User("SAM",25,"INDIA");
+console.log(user1);
+console.log(user2);
+
+//ADDING PROPERTY DYNAMICALLY AFTER OBJECT CREATION
+function Customer(name,email){
+    this.name=name;
+    this.email=email;
+}
+let customer1=new Customer("David","david12@gmail.com");
+let customer2=new Customer("Madhu","Madhu6@gmail.com");
+console.log(customer1);
+console.log(customer2);
+
+
+//CONSTRUCTOR FUNCTION METHOD
+function Employee(name,position,salary){
+    this.name=name;
+    this.position=position;
+    this.salary=salary;
+    //Adding a method inside constructor
+    this.getDetails=function(){
+       console.log(`${this.name} + "works as a" + ${this.position} + "and earns" + $${this.salary}+ "per year." `); //TEMPLATE LITERALS - Backticks(`) 
+    };
+}
+
+let employee1=new Employee("Emma","Software Engineer",8000);
+let employee2=new Employee("Ryan","Software Engineer",7000);
+console.log(employee1.getDetails());
+console.log(employee2.getDetails());
