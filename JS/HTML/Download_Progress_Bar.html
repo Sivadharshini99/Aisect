@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download_Progress_Bar</title>
+    <style>
+        #downloadBar{
+            width: 50%;
+            height: 200px;
+            background-color: #f3f3f3;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+        }
+        /* basic style */
+        /* #progress{
+            height: 100%;
+            background-color: green;
+            width: 0%;
+        } */
+/* progress bar circle */
+        #progress{
+            background-image: conic-gradient(red, yellow, green);
+            border-radius: 50%;
+            height: 100%;
+            width: 0;
+        }
+        #status{
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="downloadBar">
+        <div id="progress"></div>
+    </div>
+        <div id="status">Downloading:0%</div>
+        <!-- download button -->
+         <button onclick="startDownload()">Start Download</button>
+         <script>
+            function startDownload(){
+                let progressBar=document.getElementById('progress');
+                let statusText=document.getElementById('status');
+                let width=0;
+                //simulate download process
+                let downloadInterval=setInterval(function(){
+                    if(width>=100){
+                        clearInterval(downloadInterval);
+                        statusText.innerText='Download Complete!';
+                    }
+                    else{
+                        width++;
+                        progressBar.style.width=width+'%';
+                        statusText.innerText='Downloading:'+ width + '%';
+                    }
+                },100);//simulate a 100ms update interval
+
+
+            }
+         </script>
+</body>
+</html>

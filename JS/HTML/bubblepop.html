@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Bubbles in Multiple Colors</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+        /* Create the bubbles */
+        .bubble {
+            position: absolute;
+            bottom: -50px;
+            border-radius: 50%;
+            animation: bubble-animation 6s infinite;
+        }
+
+        /* Animation to move the bubbles */
+        @keyframes bubble-animation {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100px) translateY(-100vh);
+                opacity: 0; /* Fade out as the bubble rises */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, sint. Quaerat ducimus quod quasi totam temporibus dolores officiis vitae voluptatum est et, earum impedit excepturi? Sapiente at nihil unde necessitatibus.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic doloremque asperiores et eaque perspiciatis corrupti veniam voluptate obcaecati ea voluptatibus esse, sint quis magnam sit delectus recusandae doloribus ullam unde!</p>
+<script>
+    // List of colors to choose from
+    const bubbleColors = ['rgba(128, 0, 128, 0.7)', 'rgba(0, 255, 255, 0.7)', 'rgba(255, 165, 0, 0.7)', 'rgba(0, 255, 0, 0.7)'];
+
+    function createBubble() {
+        // Create a new bubble element
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        // Randomize the size of the bubble
+        const size = Math.random() * 50 + 10; // Bubble size between 10px and 60px
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+
+        // Randomize the color of the bubble from the list
+        const colorIndex = Math.floor(Math.random() * bubbleColors.length);
+        bubble.style.backgroundColor = bubbleColors[colorIndex];
+
+        // Randomize the horizontal position of the bubble
+        const leftPosition = Math.random() * window.innerWidth;
+        bubble.style.left = `${leftPosition}px`;
+
+        // Append bubble to the body
+        document.body.appendChild(bubble);
+
+        // Randomize animation duration for each bubble
+        const duration = Math.random() * 4 + 4; // Duration between 4s and 8s
+        bubble.style.animationDuration = `${duration}s`;
+
+        // Remove the bubble after it finishes animating (to clean up the DOM)
+        setTimeout(() => {
+            bubble.remove();
+        }, duration * 1000);
+    }
+
+    // Create bubbles at intervals
+    setInterval(createBubble, 200); // Create a new bubble every 200ms
+
+</script>
+
+</body>
+</html>

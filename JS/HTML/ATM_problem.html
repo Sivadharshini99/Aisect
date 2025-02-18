@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM problem - while loop</title>
+</head>
+<body>
+    <script>
+        let balance=500;
+let withdrawal = parseInt(prompt( "Enter withdrawal amount" ));
+
+while(withdrawal > balance || withdrawal <= 0){
+    alert("Invalid amount!, Enter a valid withdrawal amount");
+    withdrawal = parseInt(prompt( "Enter withdrawal amount" ));
+}
+alert("Transaction successful! you withdraw $" + withdrawal); 
+    </script>
+</body>
+</html>
