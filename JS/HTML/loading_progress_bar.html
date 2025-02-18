@@ -1,154 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circle Dotted Loading Progress</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing Dots Spinner (No Background Circle)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            position: relative;
+        }
 
-    .container {
-      position: relative;
-      width: 150px;
-      height: 150px;
-    }
+        #progressCanvas {
+            border-radius: 50%;
+            border: none;  /* Removed the background circle border */
+        }
 
-    .circle {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      animation: rotateCircle 2s linear infinite;
-    }
-
-    .dot {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      opacity: 0;
-      animation: growDot 1s forwards;
-    }
-
-    /* Primary color dot */
-    .dot-primary {
-      background-color: #007bff;
-    }
-
-    /* Secondary color dot */
-    .dot-secondary {
-      background-color: #6c757d;
-    }
-
-    @keyframes rotateCircle {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes growDot {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 0;
-      }
-      50% {
-        width: 12px;
-        height: 12px;
-        opacity: 1;
-      }
-      100% {
-        width: 12px;
-        height: 12px;
-        opacity: 1;
-      }
-    }
-
-    .percentage {
-      text-align: center;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-  </style>
+        /* Style for the percentage text in the center */
+        .percentage-text {
+            position: absolute;
+            font-size: 30px;
+            font-weight: bold;
+            color: #4CAF50; /* Green color for text */
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="circle"></div>
-  </div>
-  <div class="percentage" id="percentageText">0%</div>
+    <!-- Canvas for Circular Dots Animation -->
+    <canvas id="progressCanvas" width="200" height="200"></canvas>
+    <div id="percentage" class="percentage-text">0%</div> <!-- Percentage text in the center -->
 
-  <script>
-    let totalDots = 12;  // Number of dots in the circle
-    let percentageText = document.getElementById('percentageText');
-    let progress = 0;    // To track the progress percentage
-    let dots = [];
+    <script>
+        const canvas = document.getElementById("progressCanvas");
+        const ctx = canvas.getContext("2d");
 
-    // Function to create the dots
-    const createDots = () => {
-      const circleElement = document.querySelector('.circle');
-      const radius = 60; // Radius of the circle
-      const angleStep = (2 * Math.PI) / totalDots; // Step angle for each dot
+        const radius = canvas.width / 2 - 20;  // Circle radius
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
 
-      for (let i = 0; i < totalDots; i++) {
-        let dot = document.createElement('div');
-        dot.classList.add('dot');
+        let progress = 0;  // Progress from 0 to totalDots
+        const totalDots = 12; // Total number of dots in the circle
+        const minDotSize = 5;  // Minimum size of the dot
+        const maxDotSize = 12; // Maximum size of the dot
+        const speed = 200; // Speed of the growing animation (milliseconds)
 
-        // Assign primary or secondary color based on the index
-        if (i % 2 === 0) {
-          dot.classList.add('dot-primary');
-        } else {
-          dot.classList.add('dot-secondary');
+        // Draw the circular growing dots
+        function drawGrowingDots(progress) {
+            // Clear previous drawing
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw the rotating dots one by one, based on progress
+            const angleStep = 2 * Math.PI / totalDots;  // Angle between each dot
+            for (let i = 0; i < progress; i++) {
+                const angle = angleStep * i;  // Calculate angle for each dot
+
+                // Dot size grows from minDotSize to maxDotSize
+                const dotSize = minDotSize + (maxDotSize - minDotSize) * (progress / totalDots);
+
+                const x = centerX + Math.cos(angle) * radius;  // X position of the dot
+                const y = centerY + Math.sin(angle) * radius;  // Y position of the dot
+
+                ctx.beginPath();
+                ctx.arc(x, y, dotSize, 0, 2 * Math.PI);  // Draw growing dot
+                ctx.fillStyle = "#4CAF50";  // Green color for dots
+                ctx.fill();
+                ctx.closePath();
+            }
         }
 
-        // Calculate position of each dot based on the angle
-        let angle = i * angleStep;
-        let x = Math.cos(angle) * radius + 50;  // 50 is the center of the circle (since radius = 50px)
-        let y = Math.sin(angle) * radius + 50;  // 50 is the center of the circle (since radius = 50px)
-
-        dot.style.left = `${x - 6}px`;  // Adjust for dot size
-        dot.style.top = `${y - 6}px`;   // Adjust for dot size
-
-        // Append the dot to the circle
-        circleElement.appendChild(dot);
-        dots.push(dot);  // Add to dots array for tracking
-      }
-    };
-
-    // Function to update progress
-    const updateProgress = () => {
-      let interval = setInterval(() => {
-        if (progress >= 100) {
-          clearInterval(interval);
-        } else {
-          progress++;
-          let activeDotCount = Math.round((progress / 100) * totalDots);
-
-          // Show only the number of active dots based on the progress percentage
-          for (let i = 0; i < activeDotCount; i++) {
-            dots[i].style.opacity = 1;
-            dots[i].style.animationDelay = `${i * 0.2}s`;  // Delay each dot's growth
-          }
-          percentageText.textContent = progress + '%';
+        // Update the percentage text in the center of the circle
+        function updatePercentageText(progress) {
+            const percentageText = document.getElementById("percentage");
+            percentageText.textContent = `${Math.round((progress / totalDots) * 100)}%`;
         }
-      }, 100);  // Update every 100ms
-    };
 
-    // Initialize the dots and start the progress animation
-    createDots();
-    updateProgress();
-  </script>
+        // Function to simulate progress and update both pie chart and text
+        function updateProgressBar() {
+            if (progress < totalDots) {
+                progress += 1;  // Increase progress (one dot at a time)
+                drawGrowingDots(progress);
+                updatePercentageText(progress);  // Update text with current percentage
+                setTimeout(updateProgressBar, speed);  // Update every 200ms
+            }
+        }
+
+        // Initialize progress
+        updateProgressBar();
+
+    </script>
 
 </body>
 </html>
