@@ -512,3 +512,110 @@ let employee1=new Employee("Emma","Software Engineer",8000);
 let employee2=new Employee("Ryan","Software Engineer",7000);
 console.log(employee1.getDetails());
 console.log(employee2.getDetails());
+
+//CLASSES
+class Car1{ //cls.name = Car1
+    constructor(name,year){ //constructor method
+        this.name=name;
+        this.year=year;
+    }
+}
+//obj.creation
+const mycar1=new Car1("Ford",2014);
+const mycar2=new Car1("Audi",2018);
+console.log(mycar1.name + " " + mycar2.name);
+
+//UAING A CONSTRUCTOR TO INITIALIZE OBJECT PROPERTIES
+class Car2{ //cls.name = Car1
+    constructor(name,year){ //constructor method
+        this.name=name;
+        this.year=year;
+    }
+}
+//obj.creation
+const mycar3=new Car1("Ford",2014);
+const mycar4=new Car1("Audi",2018);
+console.log(`Car1:${mycar3.name}(${mycar3.year}) Car2:${mycar4.name}(${mycar4.year}) `);
+console.log(mycar3.name,mycar3.year);
+console.log(mycar4.name,mycar4.year);
+
+//without constructor method
+class Animal{} //class without constuctor
+//obj.creation
+const dog=new Animal();
+console.log(`Dog Object:${JSON.stringify(dog)}`);
+console.log(dog);
+
+//constructor with default values
+class Person9{
+    constructor(name="unknown",age=0){ //constructor method
+        this.name=name;
+        this.age=age;
+    }
+}
+const person10=new Person9("siva",23);
+const person11=new Person9();
+console.log(`Person 1:${person10.name}(${person10.age}) Person 2:${person11.name}(${person11.age})`);
+console.log(person10.name,person10.age);
+console.log(person11.name,person11.age);
+console.log(person10);
+console.log(person11);
+
+//REAL-WORLD EXAMPLE
+//E-COMMERCE PRODUCT EXAMPLE
+class Product2{
+constructor(name,price,category){
+    this.name=name;
+    this.price=price;
+    this.category=category;
+}
+//method to apply discount to product price
+applyDiscount(discountPecentage){
+    this.price=this.price-(this.price * discountPecentage/100);
+}
+//method to display product details
+displayProduct(){
+ return `Product:${this.name} Price:$${this.price} Category:${this.category} `;
+}
+}
+//creating product instance
+const product3=new Product2("Mobile",1200,"Electronics");
+const product4=new Product2("Laptop",18000);
+//apply 10% discount on product 1
+product4.applyDiscount(45);
+
+console.log(`${product3.displayProduct()} ${product4.displayProduct()} `);
+
+//closure
+function discountPercentage2(discountPercent){
+    return function(price){
+
+        const discountAmount=price * discountPercent/100; // Calculate the discount
+         return price-discountAmount; // Subtract discount from the original price
+
+    };
+}
+
+var priceresult=discountPercentage2(45);
+console.log(priceresult(18000)); //passing 1800 as a input value to ---> price parameter
+
+//closure-another way
+function discountPercentage3(discountPercent){
+    return function(price){
+
+        return price => price - (price * discountPercent / 100);
+    };
+}
+
+var priceresult=discountPercentage2(45);
+console.log(priceresult(18000));
+
+//another type/way
+function calculateDiscountPrice(originalPrice,discountPercentage){
+    return originalPrice-(originalPrice * discountPercentage/100);
+}
+let originalPrice=18000;
+let discountPecentage=45;
+
+let finalPrice=calculateDiscountPrice(originalPrice,discountPecentage);
+console.log(finalPrice);
