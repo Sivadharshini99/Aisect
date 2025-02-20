@@ -619,3 +619,76 @@ let discountPecentage=45;
 
 let finalPrice=calculateDiscountPrice(originalPrice,discountPecentage);
 console.log(finalPrice);
+
+// strings
+let cartTotal="50"-10+5*2+"20";
+console.log(cartTotal);
+
+let cartTotal2=("50"-(10+5)*2+"20");
+console.log(cartTotal2);
+
+// //USER AUTHENTICATION
+class User2{
+    constructor(username,email,password){
+        this.username=username;
+        this.email=email;
+        this.password=password;
+    }
+    //method to simulate user registration-create & returns a new user Instance
+    static register(username,email,password){
+        return new User2(username,email,password);
+    } 
+    //method to check login credentials - compares input credentials with stored data to validate login 
+    checkLogin(inputUsername,inputPassword){
+        if(this.username===inputUsername && this.password===inputPassword){
+            return `login successful welcome,${this.username}`;
+        }
+        else{
+            return "Invalid username or password"
+        }
+    }
+}
+//registering new user
+const user3=User2.register("siva","siva12@gmail.com","siva12");
+//simulating login attempt
+const loginResult=user3.checkLogin("siva","siva12");
+console.log(loginResult);
+
+//BANK ACCOUNT MANAGEMENT
+class BankAccount{
+    constructor(accountNumber,balance=0){
+        this.accountNumber=accountNumber;
+        this.balance=balance;
+    }
+    //method to deposit money
+    deposit(amount){
+        if(amount > 0){
+            this.balance += amount;
+            return `Deposited $${amount}.New Balance:$${this.balance}`;
+        }
+        else{
+            return "deposited amount must be positive";
+        }
+    }
+    //method to withdraw money
+    withdraw(amount){
+        if(amount >0 && amount <= this.balance){
+            this.balance -=amount;
+            return `withdrew $${amount}.New balance:$${this.balance}`;
+        }
+        else{
+            return "Invalid withdrawal amount";
+        }
+    }
+    //method to display account details
+    displayAccount(){
+        return`AccountNumber:$${this.accountNumber} Balance:$${this.balance}`;
+    }
+}
+//creating a bank account instance
+const account1=new BankAccount("123456789",500);
+//performing transactions
+const depositresult=account1.deposit(200);
+const withdrawResult=account1.withdraw(100);
+//display account information
+console.log(`${account1.displayAccount()} ${depositresult} ${withdrawResult}`);
