@@ -692,3 +692,17 @@ const depositresult=account1.deposit(200);
 const withdrawResult=account1.withdraw(100);
 //display account information
 console.log(`${account1.displayAccount()} ${depositresult} ${withdrawResult}`);
+//JS class Methods
+class Car3{
+    constructor(name,year){
+        this.name=name;
+        this.year=year;
+    }
+    age(){ //method
+        const date=new Date();
+        return date.getFullYear()-this.year;
+    }
+}
+
+const myCar=new Car3("Ford",2014);
+console.log("My car is " + myCar.age() + " years old." );
