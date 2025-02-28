@@ -706,3 +706,16 @@ class Car3{
 
 const myCar=new Car3("Ford",2014);
 console.log("My car is " + myCar.age() + " years old." );
+
+//FUNCTIONS-STRICT MODE
+//use strict - keyword should be used to follow strict mode
+function strictFunction(){
+    "use strict";
+    try{
+        x=10;
+    }catch(error){
+        console.log(error.message);
+    }
+}
+console.log(strictFunction(x));
+
