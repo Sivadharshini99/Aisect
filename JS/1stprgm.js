@@ -718,4 +718,58 @@ function strictFunction(){
     }
 }
 console.log(strictFunction(x));
+//duplicate parameters
 
+function duplicateparamter(a,a){
+    console.log(a+a);   
+}
+duplicateparamter(2,3)
+
+//INHERITANCE
+class Person3{
+    constructor(name){
+        this.name=name;
+    }
+    //Parent Method
+    greet(){  
+        return `Hello,my name is ${this.name}`;
+    }
+}
+//child class extending parent
+class Student extends Person3{
+    constructor(name,course){
+        super(name);
+        this.course=course;
+    }
+    //child method using parent method
+    details(){
+        return `${this.greet()} and I am studying ${this.course} `;
+    }
+}
+//obj.creation of child class
+const student1=new Student("siva","cs");
+console.log(student1.details());
+
+//Getters and Setters
+class BankAccount2{
+    constructor(balance){
+        this._balance=balance;
+    }
+    get balance(){
+        return this._balance;
+    }
+    //set -method --->allow validation and modification ,ensuring data consistency
+    set balance(amount){
+        if(amount < 0){
+            console.log("balance cannot be negative");
+        }
+        else{
+            this._balance = amount;
+        }
+    }
+}
+
+const account=new BankAccount2(5000);
+account.balance=-1000;//error value cannot be negative
+account.balance=7000;
+console.log("updated balance:$" + account.balance);
