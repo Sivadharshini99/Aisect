@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .product{
+        border:1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        display: inline-block;
+    }
+</style>
+<body>
+    <h2>Available Products</h2>
+    <div id="product-list"></div>
+    <script>
+        //product array with objects
+        let Products=[
+            {name:"Laptop",price:"$22000"},
+            {name:"Watch",price:"$500"},
+            {name:"Phone",price:"$1600"},
+            {name:"Headphone",price:"$520"},
+        ];
+        //function to display products
+        function displayProducts(){
+            let productList=document.getElementById("product-list");
+            productList.innerHTML=""//clear previous content
+            Products.forEach(product=>{
+                let productDiv=document.createElement("div");
+                productDiv.className="product";
+                productDiv.innerHTML=`<h3>${product.name}</h3><p>Price:${product.price}</p>`;
+                productList.appendChild(productDiv);
+            });
+        }
+        //call functions to display products on page load
+        displayProducts();
+    </script>
+</body>
+</html>

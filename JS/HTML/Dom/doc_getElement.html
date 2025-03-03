@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc_getElementByid</title>
+</head>
+<body>
+    <h1 style="text-align: center;">document.getElementBy....</h1>
+    <h1>doc_getElementByid</h1>
+    <h2 id="heading">Original Text</h2>
+    <button onclick="changeText()">Click Me</button>
+    <hr>
+
+    <h1>doc_getElementByTagName</h1>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+    <button onclick="changeColor()">Change Color</button>
+    <hr>
+
+    <h1>doc_getElementByClassName</h1>
+    <p class="highlight">this is a paragraph</p>
+    <p class="highlight">this is another paragraph</p>
+    <button onclick="highlightText()">Highlight</button>
+    <hr>
+
+    <h1 style="text-align: center;">Elements</h1>
+    <h1>Element.innerHtml</h1>
+    <p id="demo">OriginalText</p>
+    <button onclick="changeText2()">change Text</button>
+    <hr>
+    
+    <h1>Element.Attribute-changes value of an attribute </h1>
+    <img src="headphones.png" alt="flower" id="image">
+    <button onclick="chageImage()">Change Image</button>
+
+    <script>
+        //doc_getElementByid
+        function changeText(){
+            var element=document.getElementById("heading");
+            element.innerHTML="Text changed!";
+        }
+        //doc_getElementByTagName
+        function changeColor(){
+            var element2=document.getElementsByTagName("p");
+            for(var i=0;i<element2.length;i++){
+                element2[i].style.color="green";
+            }
+        }
+        //doc_getElementByClassName
+        function highlightText(){
+            var element3=document.getElementsByClassName("highlight");
+            for(var i=0;i<element3.length;i++){
+                element3[i].style.backgroundColor="purple";
+            }
+        }
+        //Element.innerHtml
+        function changeText2(){
+            document.getElementById("demo").innerHTML="Updated Text!";
+        }
+
+        //Element.attribute
+        function changeImage(){
+            document.getElementById("image").src="flower.png";
+            
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

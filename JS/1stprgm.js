@@ -773,3 +773,15 @@ const account=new BankAccount2(5000);
 account.balance=-1000;//error value cannot be negative
 account.balance=7000;
 console.log("updated balance:$" + account.balance);
+
+//static methods
+class MathUtility{ 
+    // class -level static method
+    static square(num){
+        return num*num;
+    }
+}
+console.log(MathUtility.square(5)); //classname.StaticMethodName
+//ARRAY
+let fruits=["apple","mango","banana"];
+console.log(fruits);
