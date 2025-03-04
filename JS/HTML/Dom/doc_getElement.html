@@ -30,9 +30,52 @@
     <button onclick="changeText2()">change Text</button>
     <hr>
     
+   <h1 style="text-align: center;"> ATTRIBUTES----src,href.....</h1>
     <h1>Element.Attribute-changes value of an attribute </h1>
     <img src="headphones.png" alt="flower" id="image">
-    <button onclick="chageImage()">Change Image</button>
+    <button onclick="changeImage()">Change Image</button>
+    <hr>
+
+    <h1>element.setAttribute</h1>
+    <a href="https://www.swiggy.com/" id="myLink">Visit</a>
+    <button onclick="changeLink()">Change Link</button>
+    <hr>
+
+    <h1>Element.style.property</h1>
+    <p id="text">Change My Color </p>
+    <button onclick="changeColor()">Change color</button>
+    <hr>
+
+    <h1 style="text-align: center;">DOCUMENTS-ELEMENTS</h1>
+    <h1>document.create element</h1>
+    <div id="container"></div>
+    <button onclick="addElement()">Add Paragraph</button>
+    <hr>
+
+    <h1>document.removechild - removes specified child element from a parent</h1>
+    <div id="container2">
+        <p id="para">This is a paragraph</p>
+    </div>
+    <button onclick="removeElement()">Remove Paragraph</button>
+    <hr>
+
+    <h1>document.appendchild</h1>
+    <ul id="list"></ul>
+    <button onclick="addListItem()">Add Item</button>
+    <hr>
+
+    <h1>Replace Child</h1>
+    <div id="container3">
+        <p id="old">old paragraph</p>
+    </div>
+    <button onclick="replaceElement()">Replace Text</button>
+    <hr>
+
+
+
+
+
+
 
     <script>
         //doc_getElementByid
@@ -61,9 +104,52 @@
 
         //Element.attribute
         function changeImage(){
-            document.getElementById("image").src="flower.png";
-            
+            document.getElementById("image").src="flower.png";   
         }
+
+        //element.setAttribute
+        function changeLink(){
+            document.getElementById("myLink").setAttribute("href","https://www.zomato.com/")
+        }
+
+        //Element.style.property
+        function changeColor(){
+            document.getElementById("text").style.color="pink";
+            document.body.style.color="orange";
+        }
+
+        //document.create element
+        //appendchild--> method- adds new element or content 
+        function addElement(){
+            let newPara=document.createElement("p");
+            newPara.innerHTML="this is a new paragraph!";
+            document.getElementById("container").appendChild(newPara)
+        }
+
+        //.removechild - removes specified child element from parent
+        function removeElement(){
+            let parent=document.getElementById("container2");
+            let child=document.getElementById("para");
+            parent.removeChild(child);
+        }
+
+        //document.appendchild
+        function addListItem(){
+            let newItem=document.createElement("li");
+            newItem.innerHTML="New List Item";
+            document.getElementById("list").appendChild(newItem);
+        }
+
+        //
+        function replaceElement(){
+            let parent2=document.getElementById("container3");
+            let newPara2=document.createElement("p");
+            newPara2.innerHTML="new replaced paragraph";
+            let oldPara=document.getElementById("old");
+            parent2.replaceChild(newPara2,oldPara);
+        }
+
+
 
 
 
