@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HtML Elements</title>
+</head>
+<body>
+    <div id="div1">
+        <p id="p1">This is a paragraph</p>
+    <p id="p2">This is a paragraph</p>
+    </div>
+
+    <script>
+        //append child
+        var para=document.createElement("p");//creates a new p element
+        var node=document.createTextNode("this is new");//creates a text node with content
+        para.appendChild(node);//appends the text node to the p element
+
+        var element=document.getElementById("div1");//finds the div with id "div1";
+        element.appendChild(para);//append the newly created p elements to the div
+
+        //remove element
+        var parent=document.getElementById('div1');
+        var child=document.getElementById("p1");
+        parent.removeChild(child);//removes p1 element
+    </script>
+</body>
+</html>

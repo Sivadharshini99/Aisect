@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event_handling</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Event Handling</h1>
+    <h1>Button click event</h1>
+    <h2 id="heading">click the button to change the text</h2>
+    <button id="myButton">Click Me</button>
+    <hr>
+    <h1>Shopping Cart</h1>
+    <h2>Available Products</h2>
+    <button onclick="addToCart('Phone')">Add Phone</button>
+    <h2>Shopping cart</h2>
+    <ul id="cart"></ul>
+
+    <script>
+        document.getElementById("myButton").onclick=function(){
+            document.getElementById("heading").innerHTML="Text Changed"
+        }
+
+        //Available Products-shopping cart
+        function addToCart(product){
+            let listItem=document.createElement('li');
+            listItem.innerText=product;
+            document.getElementById("cart").appendChild(listItem);
+        }
+
+
+    </script>
+    <!-- Another Way -->
+    <!-- <button onclick="textChange()">Click</button>
+    <script>
+        function textChange(){
+            document.getElementById("heading").innerHTML="Text Changed"
+        }
+    </script> -->
+</body>
+</html>

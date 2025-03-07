@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Objects</title>
+</head>
+<body>
+    <h1>document.anchors</h1>
+    <a href="#section1" name="section1">Section 1</a>
+    <a href="#section2" name="section2">Section 2</a>
+    <p id="output"></p>
+    <hr>
+
+    <h1>document.body--blue backgroundColor</h1>
+    <hr>
+
+    <h1>document.cookie-stores user's information</h1>
+    <hr>
+
+    <h1>document.domain</h1>
+    <hr>
+
+    <h1>document.forms</h1>
+    <form id="myForm">
+        <input type="text" name="username">
+    </form>
+    <hr>
+
+    <h1>document.referrer</h1>
+    <hr>
+
+    <h1>document.title</h1>
+
+    <script>
+        document.getElementById("output").innerHTML="Numbers of anchors:"+document.anchors.length;
+
+        //document.body
+        document.body.style.backgroundColor="lightBlue";
+        //document.cookie-stores user's information
+        document.cookie="username=John";
+        alert("Cookies:" + document.cookie)
+        //document.domain
+        document.write("current domain:" + document.domain);
+        //document.forms
+        document.writeln("Numbers of Forms:" + document.forms.length);
+        //document.referrer
+        document.writeln("Reffer URL:" + document.referrer);
+        //document.title
+        document.title="updated Title"
+        //document.url
+        document.writeln("Current URL:" + document.URL);
+
+
+
+
+    </script>
+</body>
+</html>

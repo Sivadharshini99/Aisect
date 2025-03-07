@@ -785,3 +785,8 @@ console.log(MathUtility.square(5)); //classname.StaticMethodName
 //ARRAY
 let fruits=["apple","mango","banana"];
 console.log(fruits);
+//DATE OBJECT AND CONSTRUCTOR METHODS
+d=new Date();
+d1=new Date(milliseconds);
+console.log(d);
+console.log(d1);
