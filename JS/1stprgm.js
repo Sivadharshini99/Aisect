@@ -786,7 +786,35 @@ console.log(MathUtility.square(5)); //classname.StaticMethodName
 let fruits=["apple","mango","banana"];
 console.log(fruits);
 //DATE OBJECT AND CONSTRUCTOR METHODS
-d=new Date();
-d1=new Date(milliseconds);
+let millis=1672531200000;
+let datestr="2025-05-12";//string to date format
+d=new Date();//current date and time
+d1=new Date(Number(millis));
+d2=new Date(datestr);
 console.log(d);
 console.log(d1);
+console.log(d2);
+let year=2023;
+let month=12;
+let day1=6;
+let hours=8;
+let minutes=23;
+let d3=new Date(year,month,day1,hours,minutes);
+console.log(d3);
+
+//STRING OBJECTS
+var txt=new String("Hello,Javascript!");
+//displaying type of txt
+console.log("value:" + txt + "|type:" +typeof txt);
+
+//every
+let scores2=[45,0,92,67,95];
+let allPassed=scores2.every(score2=>score2>=40);
+console.log(allPassed?"All students passed." : "some student failed");
+
+//ARRAYS
+//some-Checks if atleast one element in an array passes a test
+let scores1=[75,88,92,67,85];
+let highScore=scores.some(score=>score>90);
+console.log(highScore ? "At least one student scored above 90." : "no student scored above 90");
+

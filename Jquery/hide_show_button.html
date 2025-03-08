@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p id="message">this is a sample text will be hidden and shown</p>
+    <p id="msg">Loading....</p>
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggle">Togggle</button>
+    <hr>
+
+    <h1>text and color change</h1>
+    <p id="content">original Text</p>
+    <button id="changeText">change Text</button>
+    <button id="changeColor">change Color</button>
+    <hr>
+
+    <h1>click and hover elements</h1>
+    <button id="clickBtn">Click Me</button>
+    <div id="box">Hover Me</div>
+    <hr>
+
+    <h1></h1>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#hideBtn").click(function(){
+                $("#message").hide();//hides the paragraph when button is clicked
+            });
+            $("#showBtn").click(function(){
+                $("#message").show();//shows the paragraph when button is clicked
+            });
+                $("#toggle").click(function(){
+                    $("#message").toggle();
+            });
+        });
+
+        //ensuring dom is fully loaded after executing
+        $(document).ready(function(){
+            $("#msg").text("the Dom is fully Loaded");
+        });
+        //change text and color
+        (function(){
+            $("#changeText").click(function(){
+                $("#content").text("text changed ");
+            });
+
+            $("#changeColor").click(function(){
+                $("#content").css("color","red");
+
+            });
+        })
+        ();
+
+        //click and hover effects
+        (function(){
+            $("#clickBtn").click(function(){
+                alert("Button clicked!");
+            });
+              //hover event
+            $("#box").hover(function(){
+                $(this).css("background-color","red").text("Hovered!");
+
+            },function(){
+                $(this).css("background-color","lightblue").text("hover me")
+            });
+        })
+        ();
+
+    </script>
+</body>
+</html>
