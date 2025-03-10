@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery ajax</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+</head>
+<body>
+    <button id="loadData">load Data</button>
+    <div id="result"></div>
+    <hr>
+    <button id="fetchData">Get Post Data</button>
+    <div id="output"></div>
+
+    <script>
+        (function(){
+            $("#loadData").click(function(){
+                $.get("https://jsonplaceholder.typicode.com/posts/1",function(data){
+                    $("#result").html("<h3>"+ data.title + "</h3><p>" + data.body + "</p>");
+                });
+            });
+        })
+        ();
+        //ALTERNATE PROGRAM
+        $(document).ready(function(){
+            $("#fetchData").click(function(){
+                $.ajax({
+                    url:"https://jsonplaceholder.typicode.com/posts/1",
+                    type:"GET",
+                    dataType:"json",
+                    success:function(data){
+                        $("#output").html ("<h3>"+ data.title + "</h3><p>" + data.body + "</p>");
+                    },
+                    error:function(){
+                        $("#output").html ("<p>Error fetching data</p>");
+                    }
+
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

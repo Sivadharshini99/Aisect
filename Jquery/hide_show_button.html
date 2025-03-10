@@ -11,7 +11,6 @@
     <p id="msg">Loading....</p>
     <button id="hideBtn">Hide</button>
     <button id="showBtn">Show</button>
-    <button id="toggle">Togggle</button>
     <hr>
 
     <h1>text and color change</h1>
@@ -25,8 +24,9 @@
     <div id="box">Hover Me</div>
     <hr>
 
-    <h1></h1>
-
+    <h1>Toggle</h1>
+    <div id="box2" style="height: 100px; width: 100px; background-color: brown;"></div>
+    <button id="toggle">Togggle</button>
 
     <script>
         $(document).ready(function(){
@@ -36,9 +36,7 @@
             $("#showBtn").click(function(){
                 $("#message").show();//shows the paragraph when button is clicked
             });
-                $("#toggle").click(function(){
-                    $("#message").toggle();
-            });
+              
         });
 
         //ensuring dom is fully loaded after executing
@@ -70,6 +68,15 @@
             },function(){
                 $(this).css("background-color","lightblue").text("hover me")
             });
+        })
+        ();
+
+        //toggle
+        (function(){
+            $("#toggle").click(function(){
+                    $("#box2").toggle();
+            });
+
         })
         ();
 
