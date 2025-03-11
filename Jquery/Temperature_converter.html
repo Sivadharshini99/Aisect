@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <style>
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Temperature Converter</h2>
+        <label>Enter Temperature:</label>
+        <input type="number" id="temperature" placeholder="enter value">
+        <label>Select Conversion:</label>
+        <select id="unit">
+            <option value="C">Celsius to Fahrenheit</option>
+            <option value="F">Fahrenheit to Celsius</option>
+        </select>
+        <button id="convert">Convert</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#convert").click(function(){
+                //get input value and conversion type
+                let temp=parseFloat($("#temperature").val());
+                let unit=$("#unit").val();
+
+                //validate input
+                if(isNaN(temp)){
+                    $("#result").text("please enter a valid temperature.");
+                    return;
+                    
+                }
+                let convertedTemp;
+                let convertedUnit;
+
+                //perform conversion
+                if(unit==="C"){
+                    convertedTemp=(temp*9/5)+32;
+                    // convertedUnit="F(Fahrenheit)";
+                    convertedUnit = "°F (Fahrenheit)";
+                }
+                else{
+                    convertedTemp=(temp-32)*5/9;
+                    // convertedUnit="C(Celsius)";
+                    convertedUnit = "°C (Celsius)";
+                }
+                //display result
+                $("#result").html(`<strong>Converted Temperature:${convertedTemp.toFixed(2)} ${convertedUnit}</strong>`);
+            });
+        });
+
+    </script>
+</body>
+</html>

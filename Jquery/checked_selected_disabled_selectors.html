@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=z, initial-scale=1.0">
+    <title>checked_selected_disabled_selectors</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+</head>
+<body>
+    <label>
+        <input type="checkbox" id="agree"> I agree to terms and conditions
+    </label>
+    <br>
+    <button id="submitBtn" disabled>Submit</button>
+    <script>
+        $(document).ready(function(){
+            $("#agree").change(function(){
+                $("#submitBtn").prop("disabled",!this.checked);
+            });
+        });
+    </script>
+    
+</body>
+</html>

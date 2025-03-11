@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>child descendant selector</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+    <style>
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        li{
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        </style>
+</head>
+<body>
+    <h2>Menu</h2>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+    <h2>Nested List</h2>
+    <div>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </div>
+   <script>
+     $(document).ready(function(){
+        $("ul>li").css("color","blue");
+        $("div li").css("background","lightgray");
+     });
+   </script> 
+</body>
+</html>

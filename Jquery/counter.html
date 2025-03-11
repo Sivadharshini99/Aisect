@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Word Counter</h2>
+        <textarea id="textArea" placeholder="Type your text here..."></textarea>
+        <p id="wordCount">Word Count:0</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            //get text from textarea 
+            let text=$(this).val().trim();
+            //count words(split by spaces and remove empty words)
+            let wordCount=text.length > 0 ? text.split(/\s+/).length:0;
+            //display word count
+            $("#wordCount").text(WordCount: $ {wordCount});
+        })
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Word Counter</h2>
+        <textarea id="textArea" placeholder="Type your text here..."></textarea>
+        <p id="wordCount">Word Count: 0</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Event listener to update word count whenever the user types
+            $("#textArea").on("input", function() {
+                // Get text from textarea
+                let text = $(this).val().trim();
+                
+                // Count words (split by spaces and remove empty words)
+                let wordCount = text.length > 0 ? text.split(/\s+/).length : 0;
+
+                // Display the word count
+                $("#wordCount").text(`Word Count: ${wordCount}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic_background_color_changer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Background Color changer</h2>
+        <label>Select a Color:</label>
+        <select id="colorSelect">
+            <option value="white">White</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+        <button id="changeColor">Change Background</button>
+    </div>
+  <script>
+    $(document).ready(function(){
+        $("#changeColor").click(function(){
+            //get selected colr from dropdown
+            let selectedColor=$("#colorSelect").val();
+            //change background color
+            $("body").css("background-color",selectedColor);
+        });
+    });
+  </script>
+</body>
+</html>
