@@ -1,9 +1,10 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -13,17 +14,19 @@
     </div>
     <script>
         $(document).ready(function(){
-            //get text from textarea 
-            let text=$(this).val().trim();
-            //count words(split by spaces and remove empty words)
-            let wordCount=text.length > 0 ? text.split(/\s+/).length:0;
-            //display word count
-            $("#wordCount").text(WordCount: $ {wordCount});
-        })
+            $("#textArea").on("input",function(){
+                //get text from textarea 
+                let text=$(this).val().trim();
+                //count words(split by spaces and remove empty words)
+                let wordCount=text.length > 0 ? text.split(/\s+/).length:0;
+                //display word count
+                $("#wordCount").text(`WordCount: ${wordCount}`);
+            });
+            });
     </script>
 </body>
-</html> -->
-
+</html>
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,4 +58,4 @@
         });
     </script>
 </body>
-</html>
+</html> -->

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <!-- without jquery -->
+</head>
+<body>
+    <h2>fetch user data promises</h2>
+    <button onclick="fetchUserData()">Load users</button>
+    <p id="status"></p>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        function fetchUserData(){
+            document.getElementById("status").innerText="Fetching data....Please Wait.";
+            //fetching user data from ApI
+            fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response=>{
+                if(!response.ok){
+                    throw new Error("network response was not ok");
+                }
+                return response.json();//convert response to Json
+            })
+            .then(users=>{
+                document.getElementById("status").innerText="Data loaded successfully!";
+                displayUsers(users);
+            })
+            .catch(error=>{
+                document.getElementById("status").innerText="Error Loading Data!";
+                console.error("Fetch:",error);
+            })
+            .finally(()=>console.log("fetch operation completed"));
+        }
+        function displayUsers(users){
+            let tbody=document.querySelector("#userTable tbody");
+            tbody.innerHTML="";//clear previous data
+
+            users.forEach(user=>{
+                let row=`<tr> 
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    </tr>`;
+                    tbody.innerHTML+=row;
+            });
+        }
+    </script>
+
+</body>
+</html>
