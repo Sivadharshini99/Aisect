@@ -818,3 +818,39 @@ let scores1=[75,88,92,67,85];
 let highScore=scores.some(score=>score>90);
 console.log(highScore ? "At least one student scored above 90." : "no student scored above 90");
 
+//synchronous code - one task at a time
+function f1(){
+console.log("hi");
+}
+
+function f2(){
+    console.log("bye");
+    }
+
+function f3(){
+     console.log("good");
+   }
+
+   f1();
+   f2();
+   f3();
+
+//Asynchronous code-Multiple task execution simultaneously do not wait to one task get finished,if it has some time to excute ,...then it will execute some other task
+//callback
+function f1(){
+    console.log("hi");
+    }
+    
+    function f2(){
+        console.log("bye");
+        }
+    
+    function f3(){
+         console.log("good");
+       }
+    
+       f1();
+       setTimeout(f2,2000);//CALLBACK-FN.PASSED AS ARGUMENT OF ANOTHER FUNCTION ----- setTimeout method with 2 parameters(function,time)
+       f3();
+//PROMISES
+

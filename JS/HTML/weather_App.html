@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #weatherInfo {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Weather App (Using Async/Await)</h2>
+    <input type="text" id="city" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+
+    <p id="weatherInfo"></p>
+
+    <script>
+      async function getWeather() {
+        let city = document.getElementById("city").value; // Get city name from input
+        let weatherInfo = document.getElementById("weatherInfo");
+
+        if (!city) {
+          weatherInfo.innerText = "Please enter a city name.";
+          return;
+        }
+
+        weatherInfo.innerText = "Fetching weather data...";
+
+        try {
+          let apiKey = "9eb2f9109844ab4bb4da19e0d000bcdf"; // Replace with your API key
+          let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+          let response = await fetch(url); // Fetch API call
+          if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Error fetching weather data:", response.status, errorText);
+            throw new Error("City not found!");
+          }
+
+          let data = await response.json(); // Convert response to JSON
+
+          // Extract weather details
+          let temp = data.main.temp;
+          let description = data.weather[0].description;
+          let cityName = data.name;
+
+          weatherInfo.innerHTML = `🌍 City: ${cityName} <br> 🌡 Temperature: ${temp}°C <br> 🌤 Condition: ${description}`;
+        } catch (error) {
+          weatherInfo.innerText = "Error: " + error.message;
+          console.error(error);
+        }
+      }
+    </script>
+  </body>
+</html>
