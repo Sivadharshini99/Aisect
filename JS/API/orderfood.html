@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food - Then Example</title>
+</head>
+<body>
+
+    <h2>Food Order System (Using .then())</h2>
+    <button onclick="placeOrder()">Order Food</button>
+    <p id="orderStatus"></p>
+    <hr>
+
+    <h2>Online Payment System (Using .catch())</h2>
+    <button onclick="makePayment()">Make Payment</button>
+    <p id="paymentStatus"></p>
+
+    <script>
+        function orderFood() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let foodAvailable = Math.random() > 0.5; // 50% chance
+                    if (foodAvailable) {
+                        resolve("Your food is ready! Enjoy your meal.");
+                    } else {
+                        reject("Sorry, the food is not available.");
+                    }
+                }, 2000);
+            });
+        }
+
+        function placeOrder() {
+            document.getElementById("orderStatus").innerText = "Placing order...";
+
+            orderFood()
+                .then(successMessage => {
+                    document.getElementById("orderStatus").innerText = successMessage;
+                })
+                .catch(errorMessage => {
+                    document.getElementById("orderStatus").innerText = errorMessage;
+                    return "Would you like to try another dish?";
+                })
+                .then(alternativeMessage => {
+                    if (alternativeMessage) {
+                        document.getElementById("orderStatus").innerText += " " + alternativeMessage;
+                    }
+                });
+        }
+
+        //
+        function processPayment() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    let paymentSuccess = Math.random() > 0.5; // 50% chance
+                    if (paymentSuccess) {
+                        resolve("Payment Successful! Thank you for your purchase.");
+                    } else {
+                        reject("Payment Failed! Please try again.");
+                    }
+                }, 2000);
+            });
+        }
+
+        function makePayment() {
+            document.getElementById("paymentStatus").innerText = "Processing payment...";
+
+            processPayment()
+                .then(successMessage => {
+                    document.getElementById("paymentStatus").innerText = successMessage;
+                })
+                .catch(errorMessage => {
+                    document.getElementById("paymentStatus").innerText = errorMessage;
+                });
+        }
+    </script>
+
+</body>
+</html>

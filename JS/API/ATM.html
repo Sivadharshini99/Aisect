@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .atm-container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 8px;
+            width: 300px;
+            margin: auto;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            width: 85%;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="atm-container">
+        <h2>ATM Machine</h2>
+        <p>Enter your 5-digit PIN</p>
+        <input type="password" id="pinInput" placeholder="Enter PIN">
+        <button onclick="withdrawMoney()">Withdraw Money</button>
+        <p id="message" class="message"></p>
+    </div>
+
+    <script>
+        function withdrawMoney() {
+            let correctPin = "12345"; // Default PIN
+            let enteredPin = document.getElementById("pinInput").value;
+            let message = document.getElementById("message");
+
+            try {
+                if (enteredPin === "") {
+                    throw new Error("PIN cannot be empty!");
+                }
+                if (enteredPin !== correctPin) {
+                    throw new Error("Incorrect PIN! Please try again.");
+                }
+                message.style.color = "green";
+                message.innerHTML = "✅ Transaction successful! Please collect your money.";
+            } catch (error) {
+                message.style.color = "red";
+                message.innerHTML = "❌ " + error.message;
+            } finally {
+                setTimeout(() => {
+                    message.innerHTML += "<br>💳 Card returned. Thank you!";
+                }, 2000); // Card returns after 2 seconds
+            }
+        }
+    </script>
+
+</body>
+</html>

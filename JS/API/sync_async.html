@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous Restaurant Order</title>
+</head>
+<body>
+    <h2>Synchronous Restaurant Order</h2>
+    <button onclick="processOrder()">Place Order</button>
+    <p id="sync-order-status"></p>
+    <hr>
+    <h2>Asynchronous Restaurant Order</h2>
+    <button onclick="placeOrder()">Place Order</button>
+    <p id="async-order-status"></p>
+
+    <script>
+        // Synchronous version of cooking the dish
+        function cookDishSync(dish) {
+            let status = document.getElementById("sync-order-status");
+            status.innerHTML += `Cooking ${dish}...<br>`;
+            for (let i = 0; i < 1000000000; i++) {} // Simulating delay (blocking)
+            status.innerHTML += `${dish} is ready!<br>`;
+        }
+
+        function processOrder() {
+            document.getElementById("sync-order-status").innerHTML = "Order received...<br>";
+            cookDishSync("Pizza");
+            cookDishSync("Pasta");
+            cookDishSync("Burger");
+            document.getElementById("sync-order-status").innerHTML += "All dishes served!";
+        }
+
+        // Asynchronous version of cooking the dish
+        function cookDishAsync(dish, callback) {
+            let status = document.getElementById("async-order-status");
+            status.innerHTML += `Cooking ${dish}...<br>`;
+            setTimeout(() => {
+                status.innerHTML += `${dish} is ready!<br>`;
+                callback(); // Call the next function
+            }, 2000);
+        }
+
+        function placeOrder() {
+            document.getElementById("async-order-status").innerHTML = "Order received...<br>";
+            cookDishAsync("Pizza", function () {
+                cookDishAsync("Pasta", function () {
+                    cookDishAsync("Burger", function () {
+                        document.getElementById("async-order-status").innerHTML += "All dishes served!";
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>

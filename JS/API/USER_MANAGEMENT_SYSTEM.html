@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="USER_MANAGEMENT_SYSTEM.js"></script>
+</head>
+<body>
+    <h1>User Management System</h1>
+
+    <button onclick="fetchUsers()">Fetch Users</button>
+
+    <h2>Add User</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter Email">
+    <button onclick="addUser()">Add User</button>
+
+    <h2>Update User</h2>
+    <input type="number" id="updateId" placeholder="Enter User ID">
+    <input type="text" id="updateName" placeholder="Enter New Name">
+    <input type="email" id="updateEmail" placeholder="Enter New Email">
+    <button onclick="updateUser()">Update User</button>
+
+    <h2>Patch User</h2>
+    <input type="number" id="patchId" placeholder="Enter User ID">
+    <input type="text" id="patchName" placeholder="Enter New Name">
+    <button onclick="patchUser()">Patch User</button>
+
+    <h2>Delete User</h2>
+    <input type="number" id="deleteId" placeholder="Enter User ID">
+    <button onclick="deleteUser()">Delete User</button>
+
+    <h2>User List</h2>
+    <ul id="userList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
