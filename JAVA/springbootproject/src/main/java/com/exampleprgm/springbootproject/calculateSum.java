@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class calculateSum {
-
-    @GetMapping("/calculation")
+    
+@GetMapping("/calculation")
     public String calculation(){
         int x = 5; 
         int y = 6; 

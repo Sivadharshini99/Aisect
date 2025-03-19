@@ -864,9 +864,12 @@ else{
 })
 //newPromise.then(console.log).catch(console.log)//TO MANAGE RESOLVE(THEN-BLOCK IS USED)---TO MANAGE REJECT(CATCH-BLOCK IS USED)
 //ALTERNATIVE WAY
-newPromise.then((message)=>{//callback passed
-console.log("success:" + message);
-})
+// newPromise.then((message)=>{//callback passed
+// console.log("success:" + message);
+// })
 .catch((error)=>{
     console.log("error:" + error);
+})
+.finally(()=>{
+    console.log("end")
 })
