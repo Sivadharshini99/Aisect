@@ -1,5 +1,8 @@
 
-import Header from './components/Header'
+import Footer from './components/Footer';
+import Header from './components/Header';
+import { Content } from './Content';
+
 
 function App() {
       
@@ -9,7 +12,8 @@ function App() {
     <>
     <Header user={user}/>
     {/* user->key,{user object/value} */}
-
+    <Footer user="dharshu"/>
+    <Content/>
     </>
   )
 }
