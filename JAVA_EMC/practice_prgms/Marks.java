@@ -15,5 +15,10 @@ public class Marks {
         System.out.println("enter your another score");
         double score2=scanner.nextDouble();
         System.out.println("my another score is " + score2/10 + "/10");
+
+        //
+        int a,b;
+        a=b=4;
+        System.out.println(a+b);
     }
 }
