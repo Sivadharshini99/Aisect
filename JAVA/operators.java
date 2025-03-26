@@ -68,6 +68,7 @@ public class operators {
         String shipping = (orderTotal2 >= 500) ? "Free Shipping" : "₹50 Shipping Fee";
 
         System.out.println("Shipping Charge: " + shipping);
+        
 
     }
 }
