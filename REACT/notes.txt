@@ -1,2 +1,3 @@
 hooks--2019--16.8
 react-components-name rules-pascal
+ 3 component-->header(function),footer(class),content(es7+shortcut)
