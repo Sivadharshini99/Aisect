@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Oddoreven",
+            "request": "launch",
+            "mainClass": "practice_prgms.Oddoreven",
+            "projectName": "SIVADHARSHINI-AISECT_45f78658"
+        },
+        {
+            "type": "java",
+            "name": "Oddeven",
+            "request": "launch",
+            "mainClass": "QUESTIONS.Oddeven",
+            "projectName": "SIVADHARSHINI-AISECT_45f78658"
+        },
+        {
+            "type": "java",
+            "name": "checkAge",
+            "request": "launch",
+            "mainClass": "checkAge",
+            "projectName": "SIVADHARSHINI-AISECT_45f78658"
+        },
+        {
+            "type": "java",
+            "name": "BankAccount",
+            "request": "launch",
+            "mainClass": "BankAccount",
+            "projectName": "SIVADHARSHINI-AISECT_45f78658"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
