@@ -1,7 +1,9 @@
 
+import Content from './components/content';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import { Content } from './Content';
+
+
 
 
 function App() {
@@ -10,10 +12,13 @@ function App() {
 
   return (
     <>
+    <div className='app'>
+      
     <Header user={user}/>
     {/* user->key,{user object/value} */}
-    <Footer user="dharshu"/>
     <Content/>
+    <Footer user="dharshu"/>
+    </div>
     </>
   )
 }
