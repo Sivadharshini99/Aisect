@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Trainticketsystem",
+            "request": "launch",
+            "mainClass": "practice_prgms.Trainticketsystem",
+            "projectName": "SIVADHARSHINI-AISECT_45f78658"
+        },
+        {
+            "type": "java",
             "name": "Oddoreven",
             "request": "launch",
             "mainClass": "practice_prgms.Oddoreven",
