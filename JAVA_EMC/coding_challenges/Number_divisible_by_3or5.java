@@ -16,7 +16,12 @@ public class Number_divisible_by_3or5 {
             System.out.println("the given num is not divisible by both 3 and 5");
         }
 
-
+//alternative way - to print numbers divisible by both 3 and 5from 1 to 100 using  for loop and if condition
+for (int i = 1; i <=100; i++) {
+    if (i%15==0) {
+        System.out.println(i);
+    }  
+}
 //alternative way- using nested-if
 // if (num%3==0) {
 //     if (num%5==0) {

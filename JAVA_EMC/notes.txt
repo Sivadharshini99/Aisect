@@ -6,3 +6,5 @@ string is also an objects
 String name="siva"; and String name=new String("siva");-->both are same but second is objects
 and compares reference no(address of data) if it mataches/same -- it is true
 to check values matches---equals() method is used
+TERNARY OPERATOR
+SYNTAX:(consition)? valueifTrue : valueifFalse;
