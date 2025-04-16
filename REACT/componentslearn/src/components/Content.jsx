@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import CounterApp from './CounterApp';
+import ConditionalRendering from './ConditionalRendering';
+import Shop from './Shop';
 
 //backticks to apply styles (styled--library,button--called from library)
 let Button=styled.button 
@@ -35,11 +37,13 @@ const Content = () => {
    
   return (
     <main>
-    <h1 style={{backgroundColor:"green",color:"white"}}>main content</h1>
+    {/* <h1 style={{backgroundColor:"green",color:"white"}}>main content</h1> */}
     {/* <p style={pStyle}>sub content</p> */}
-    <Button onClick={printSomething}>Click Me</Button>
-    <NewButton onClick={(e)=>{printSomething1(e)}}>Duplicate</NewButton>
-    <CounterApp/>   {/*counterapp calling */}
+    {/* <Button onClick={printSomething}>Click Me</Button> */}
+    {/* <NewButton onClick={(e)=>{printSomething1(e)}}>Duplicate</NewButton> */}
+    {/* <ConditionalRendering/> */}
+    {/*  <CounterApp/>   counterapp calling */}
+    <Shop/>
     </main>
   );
 };

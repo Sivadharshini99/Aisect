@@ -57,3 +57,11 @@
     display: grid;
     place-content: center;
   }
+
+  section{
+    border: 1px solid grey;
+    width: 50%;
+    height: max-content;
+    margin: auto;
+    text-align: center;
+  }
