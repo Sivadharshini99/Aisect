@@ -1,40 +1,10 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import CounterApp from "./CounterApp";
-import ConditionalRendering from "./ConditionalRendering";
-import Shop from "./Shop";
+// import styled from "styled-components";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 
-//backticks to apply styles (styled--library,button--called from library)
-let Button = styled.button`
-  background-color: blue;
-  color: white;
-  width: 100px;
-  height: 50px;
-`;
 
-let NewButton = styled(Button)`
-  background-color: red;
-  box-shadow: 0px 0px 10px black;
-`;
-
-const Content = () => {
-  let pStyle = {
-    backgroundColor: "purple",
-    padding: "3px",
-    color: "white",
-  };
-  function printSomething(e) {
-    console.log(e.target.innerText);
-
-    console.log("hello");
-  }
-
-  function printSomething1(event) {
-    console.log(event.target.innerText);
-    console.log("hello world");
-  }
+const TodoApp = () => {
   //new state-usestate
   let [items, setItems] = useState([
     { id: 1, label: "html", checked: true },
@@ -52,13 +22,13 @@ const Content = () => {
   };
   //edit mode-button-manage
   let [isEditing, setIsEditing] = useState(false);
-   let[currentEleID,setCurrentEleID]=useState(null)
+  let [currentEleID, setCurrentEleID] = useState(null);
 
   let handleUpdate = (id) => {
-    let listItem=items.find(item=>item.id===id)
-    setNewItem(listItem.label)
+    let listItem = items.find((item) => item.id === id);
+    setNewItem(listItem.label);
     setIsEditing(true);
-    setCurrentEleID(id)
+    setCurrentEleID(id);
   };
   //delete button
   let handleDelete = (id) => {
@@ -70,29 +40,25 @@ const Content = () => {
     setItems(newItems);
   };
   //add or save button
-  let handleAddorSave=()=>{
+  let handleAddorSave = () => {
     if (isEditing) {
-      let newListItems=items.map((item)=>{
-          return item.id===currentEleID ? {...item,label:newItem} : item
-        })
-        setItems(newListItems)
-        setCurrentEleID(null)
-        setNewItem("")
-        setIsEditing(false)
+      let newListItems = items.map((item) => {
+        return item.id === currentEleID ? { ...item, label: newItem } : item;
+      });
+      setItems(newListItems);
+      setCurrentEleID(null);
+      setNewItem("");
+      setIsEditing(false);
     } else {
-      setItems([...items,{id:items.length+1,label:newItem,checked:false}])
-      setNewItem("")
+      setItems([
+        ...items,
+        { id: items.length + 1, label: newItem, checked: false },
+      ]);
+      setNewItem("");
     }
-  }
+  };
   return (
     <main>
-      {/* <h1 style={{backgroundColor:"green",color:"white"}}>main content</h1> */}
-      {/* <p style={pStyle}>sub content</p> */}
-      {/* <Button onClick={printSomething}>Click Me</Button> */}
-      {/* <NewButton onClick={(e)=>{printSomething1(e)}}>Duplicate</NewButton> */}
-      {/* <ConditionalRendering/> */}
-      {/*  <CounterApp/>   counterapp calling */}
-      {/* <Shop/> */}
       <div>
         <input
           type="text"
@@ -102,7 +68,8 @@ const Content = () => {
             setNewItem(e.target.value);
           }} // onchange event handler
         />
-        <button onClick={handleAddorSave}>{isEditing ? "save" : "Add"}</button> {/* //edit mode */}
+        <button onClick={handleAddorSave}>{isEditing ? "save" : "Add"}</button>{" "}
+        {/* //edit mode */}
       </div>
       <ul>
         {items.map((item) => {
@@ -117,7 +84,11 @@ const Content = () => {
               />
               <label>{item.label}</label>
               {/* <button>Delete</button> */}
-              <FaEdit role="button" tabIndex={0} onClick={()=>handleUpdate(item.id)} />
+              <FaEdit
+                role="button"
+                tabIndex={0}
+                onClick={() => handleUpdate(item.id)}
+              />
               <FaTrashCan
                 role="button"
                 tabIndex={0}
@@ -132,4 +103,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default TodoApp;
