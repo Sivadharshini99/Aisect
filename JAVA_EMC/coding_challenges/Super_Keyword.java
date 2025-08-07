@@ -10,7 +10,7 @@ class Person{
 	}
 }
 //sub cls
-class Employee extends Person{
+class Employee extends Person2{
 	int employeeId;
 	//constructor
 	public Employee() {
